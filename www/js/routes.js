@@ -10,38 +10,44 @@ angular.module('app.routes', [])
     
   
 
-      .state('tabsController.cameraTabDefaultPage', {
-    url: '/page2',
+      .state('tabsController.neuigkeiten', {
+    url: '/footer_news',
     views: {
       'tab1': {
-        templateUrl: 'templates/cameraTabDefaultPage.html',
-        controller: 'cameraTabDefaultPageCtrl'
+        templateUrl: 'templates/neuigkeiten.html',
+        controller: 'neuigkeitenCtrl'
       }
     }
   })
 
-  .state('tabsController.cartTabDefaultPage', {
-    url: '/page3',
+  .state('entdeckungsreise', {
+    url: '/login_explore',
+    templateUrl: 'templates/entdeckungsreise.html',
+    controller: 'entdeckungsreiseCtrl'
+  })
+
+  .state('tabsController.benachrichtigungen', {
+    url: '/footer_notifications',
     views: {
       'tab2': {
-        templateUrl: 'templates/cartTabDefaultPage.html',
-        controller: 'cartTabDefaultPageCtrl'
+        templateUrl: 'templates/benachrichtigungen.html',
+        controller: 'benachrichtigungenCtrl'
       }
     }
   })
 
-  .state('tabsController.cloudTabDefaultPage', {
-    url: '/page4',
+  .state('tabsController.aufgaben', {
+    url: '/footer_tasks',
     views: {
       'tab3': {
-        templateUrl: 'templates/cloudTabDefaultPage.html',
-        controller: 'cloudTabDefaultPageCtrl'
+        templateUrl: 'templates/aufgaben.html',
+        controller: 'aufgabenCtrl'
       }
     }
   })
 
   .state('tabsController', {
-    url: '/page1',
+    url: '/tabs',
     templateUrl: 'templates/tabsController.html',
     abstract:true
   })
@@ -56,6 +62,36 @@ angular.module('app.routes', [])
     url: '/register',
     templateUrl: 'templates/registrierung.html',
     controller: 'registrierungCtrl'
+  })
+
+  .state('organisation', {
+    url: '/sidemenu_organisation',
+    templateUrl: 'templates/organisation.html',
+    controller: 'organisationCtrl'
+  })
+
+  .state('meinProfil', {
+    url: '/sidemenu_userprofile',
+    templateUrl: 'templates/meinProfil.html',
+    controller: 'meinProfilCtrl'
+  })
+
+  .state('projekte', {
+    url: '/sidemenu_projects',
+    templateUrl: 'templates/projekte.html',
+    controller: 'projekteCtrl'
+  })
+
+  .state('gelSchteAufgaben', {
+    url: '/sidemenu_deletedTasks',
+    templateUrl: 'templates/gelSchteAufgaben.html',
+    controller: 'gelSchteAufgabenCtrl'
+  })
+
+  .state('einstellungen', {
+    url: '/sidemenu_settings',
+    templateUrl: 'templates/einstellungen.html',
+    controller: 'einstellungenCtrl'
   })
 
 $urlRouterProvider.otherwise('/login')

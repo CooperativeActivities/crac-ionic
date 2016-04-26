@@ -52,9 +52,22 @@
         </ion-side-menu-content>
         <ion-side-menu side="left" id="side-menu21">
             <ion-header-bar class="bar-stable">
-                <div class="title">Menu</div>
+                <div class="title">Menü</div>
             </ion-header-bar>
-            <ion-content padding="false" class="side-menu-left has-header"></ion-content>
+            <ion-content padding="false" class="side-menu-left has-header">
+                <ion-list data-componentid="list5">
+                    <ion-item class="item-thumbnail-left" ui-sref="organisation" menu-close="" data-componentid="list-item-thumbnail2">
+                        <img>
+                        <h2>Organisation</h2>
+                        <p>Rotes Kreuz</p>
+                    </ion-item>
+                    <ion-item ui-sref="meinProfil" menu-close="" data-componentid="list-item5">Mein Profil</ion-item>
+                    <ion-item ui-sref="projekte" menu-close="" data-componentid="list-item6">Projekte</ion-item>
+                    <ion-item ui-sref="gelSchteAufgaben" menu-close="" data-componentid="list-item7">gelöschte Aufgaben</ion-item>
+                    <ion-item ui-sref="einstellungen" menu-close="" data-componentid="list-item8">Einstellungen</ion-item>
+                    <ion-item ui-sref="login" menu-close="" data-componentid="list-item9">Abmelden</ion-item>
+                </ion-list>
+            </ion-content>
         </ion-side-menu>
     </ion-side-menus>
 </div>

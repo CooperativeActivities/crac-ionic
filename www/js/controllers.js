@@ -1,14 +1,18 @@
 angular.module('app.controllers', [])
   
-.controller('cameraTabDefaultPageCtrl', function($scope) {
+.controller('neuigkeitenCtrl', function($scope) {
 
 })
    
-.controller('cartTabDefaultPageCtrl', function($scope) {
+.controller('entdeckungsreiseCtrl', function($scope) {
 
 })
    
-.controller('cloudTabDefaultPageCtrl', function($scope) {
+.controller('benachrichtigungenCtrl', function($scope) {
+
+})
+   
+.controller('aufgabenCtrl', function($scope) {
 
 })
          
@@ -17,6 +21,26 @@ angular.module('app.controllers', [])
 })
    
 .controller('registrierungCtrl', function($scope) {
+
+})
+   
+.controller('organisationCtrl', function($scope) {
+
+})
+   
+.controller('meinProfilCtrl', function($scope) {
+
+})
+   
+.controller('projekteCtrl', function($scope) {
+
+})
+   
+.controller('gelSchteAufgabenCtrl', function($scope) {
+
+})
+   
+.controller('einstellungenCtrl', function($scope) {
 
 })
  
