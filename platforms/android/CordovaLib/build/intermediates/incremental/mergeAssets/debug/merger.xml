@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/fabidop/crac/platforms/android/CordovaLib/assets"/></dataSet><dataSet config="debug"><source path="/Users/fabidop/crac/platforms/android/CordovaLib/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/Danjelous/Studium/6. Semester/Studienprojekt CrAc/crac-ionic/platforms/android/CordovaLib/assets"/></dataSet><dataSet config="debug"><source path="/Users/Danjelous/Studium/6. Semester/Studienprojekt CrAc/crac-ionic/platforms/android/CordovaLib/src/debug/assets"/></dataSet></merger>
