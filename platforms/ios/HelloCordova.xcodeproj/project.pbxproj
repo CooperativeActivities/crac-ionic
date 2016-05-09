@@ -39,12 +39,12 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		F5E82815F172490BBE25BC84 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1AA9BB9BD439FAB20DFC5 /* IonicKeyboard.m */; };
-		810694832D4149FFBDBEF82C /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352E903D1F64BD18D1CD7DE /* UIWebViewExtension.m */; };
-		4462B6AB1CCA427C950F2FBC /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B7EDC2A37A44F28C9277CA /* CDVLogger.m */; };
-		0059AE0D2E584F36AE63C09B /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D3859D231D44429395A8E3E2 /* CDVDevice.m */; };
-		9EBEC486B9324220B9BC1813 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9F19B1E529448E80F1DBC0 /* CDVSplashScreen.m */; };
-		F560B94F092943A884DF7ABC /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 407EE8951F704AFB88DB6D52 /* CDVViewController+SplashScreen.m */; };
+		D3B841D394D5481B990A157F /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE2F2E6F2C4722972EFFC2 /* IonicKeyboard.m */; };
+		CC6C9C1E56E8422D8550CDA2 /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D5CC2038D74C558C2B8134 /* UIWebViewExtension.m */; };
+		F5F5E686600A45C4A71A5D02 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B1D86D4EC048E2A48D0731 /* CDVLogger.m */; };
+		FD66E17991E545D98903C378 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C23FF946245678A47DE91 /* CDVDevice.m */; };
+		88DA936D71904E6995B39472 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 411ACF57F4E247EEA3B9F121 /* CDVSplashScreen.m */; };
+		2BC19E5F6E4842C88B5D1510 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = D53070B4CED44CC2850DD248 /* CDVViewController+SplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +67,7 @@
 /* Begin PBXFileReference section */
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* HelloCordova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HelloCordova.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F766FDD13BBADB100FB74C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		1F766FE013BBADB100FB74C0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* HelloCordova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCordova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
@@ -109,19 +107,19 @@
 		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
-		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "HelloCordova/config.xml"; sourceTree = "<group>"; };
-		4AD1AA9BB9BD439FAB20DFC5 /* IonicKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IonicKeyboard.m"; path = "com.ionic.keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		6352E903D1F64BD18D1CD7DE /* UIWebViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIWebViewExtension.m"; path = "com.ionic.keyboard/UIWebViewExtension.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		9E9DB3C70AB44E229FEDBEA3 /* IonicKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IonicKeyboard.h"; path = "com.ionic.keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		AE5BE2965A1142BEB7ECAB2E /* UIWebViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIWebViewExtension.h"; path = "com.ionic.keyboard/UIWebViewExtension.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		49B7EDC2A37A44F28C9277CA /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		9E15BDDAFA9C4609AF8EB03E /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		D3859D231D44429395A8E3E2 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		1510B500CB324B2E8CA7B4FC /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		BC9F19B1E529448E80F1DBC0 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		407EE8951F704AFB88DB6D52 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		7CED2B99FB964881840F73D3 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		833725DB6A2D4B20BBFD9357 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloCordova/config.xml; sourceTree = "<group>"; };
+		51DE2F2E6F2C4722972EFFC2 /* IonicKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IonicKeyboard.m"; path = "com.ionic.keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		92D5CC2038D74C558C2B8134 /* UIWebViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIWebViewExtension.m"; path = "com.ionic.keyboard/UIWebViewExtension.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		95C45A5AEC2F4CAB875A9EE8 /* IonicKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IonicKeyboard.h"; path = "com.ionic.keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		3B5D59FB956A45829FD5661C /* UIWebViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIWebViewExtension.h"; path = "com.ionic.keyboard/UIWebViewExtension.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		35B1D86D4EC048E2A48D0731 /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		6EE6CA25178E4295962027C7 /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		0A9C23FF946245678A47DE91 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		D629290F93014BCD9AF46E08 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		411ACF57F4E247EEA3B9F121 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		D53070B4CED44CC2850DD248 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		2F91BC411593437EA431308F /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		188136D8DA0F49DE955DC8E6 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +147,7 @@
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
 			);
 			name = Classes;
-			path = "HelloCordova/Classes";
+			path = HelloCordova/Classes;
 			sourceTree = SOURCE_ROOT;
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -185,7 +183,7 @@
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
-			path = "HelloCordova";
+			path = HelloCordova;
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -196,7 +194,7 @@
 				8D1107310486CEB800E47090 /* HelloCordova-Info.plist */,
 			);
 			name = Resources;
-			path = "HelloCordova/Resources";
+			path = HelloCordova/Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -220,21 +218,21 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				4AD1AA9BB9BD439FAB20DFC5 /* IonicKeyboard.m */,
-				6352E903D1F64BD18D1CD7DE /* UIWebViewExtension.m */,
-				9E9DB3C70AB44E229FEDBEA3 /* IonicKeyboard.h */,
-				AE5BE2965A1142BEB7ECAB2E /* UIWebViewExtension.h */,
-				49B7EDC2A37A44F28C9277CA /* CDVLogger.m */,
-				9E15BDDAFA9C4609AF8EB03E /* CDVLogger.h */,
-				D3859D231D44429395A8E3E2 /* CDVDevice.m */,
-				1510B500CB324B2E8CA7B4FC /* CDVDevice.h */,
-				BC9F19B1E529448E80F1DBC0 /* CDVSplashScreen.m */,
-				407EE8951F704AFB88DB6D52 /* CDVViewController+SplashScreen.m */,
-				7CED2B99FB964881840F73D3 /* CDVSplashScreen.h */,
-				833725DB6A2D4B20BBFD9357 /* CDVViewController+SplashScreen.h */,
+				51DE2F2E6F2C4722972EFFC2 /* IonicKeyboard.m */,
+				92D5CC2038D74C558C2B8134 /* UIWebViewExtension.m */,
+				95C45A5AEC2F4CAB875A9EE8 /* IonicKeyboard.h */,
+				3B5D59FB956A45829FD5661C /* UIWebViewExtension.h */,
+				35B1D86D4EC048E2A48D0731 /* CDVLogger.m */,
+				6EE6CA25178E4295962027C7 /* CDVLogger.h */,
+				0A9C23FF946245678A47DE91 /* CDVDevice.m */,
+				D629290F93014BCD9AF46E08 /* CDVDevice.h */,
+				411ACF57F4E247EEA3B9F121 /* CDVSplashScreen.m */,
+				D53070B4CED44CC2850DD248 /* CDVViewController+SplashScreen.m */,
+				2F91BC411593437EA431308F /* CDVSplashScreen.h */,
+				188136D8DA0F49DE955DC8E6 /* CDVViewController+SplashScreen.h */,
 			);
 			name = Plugins;
-			path = "HelloCordova/Plugins";
+			path = HelloCordova/Plugins;
 			sourceTree = SOURCE_ROOT;
 		};
 		308D052D1370CCF300D202BF /* icons */ = {
@@ -302,8 +300,8 @@
 			dependencies = (
 				301BF551109A68C00062928A /* PBXTargetDependency */,
 			);
-			name = "HelloCordova";
-			productName = "HelloCordova";
+			name = HelloCordova;
+			productName = HelloCordova;
 			productReference = 1D6058910D05DD3D006BFB54 /* HelloCordova.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -314,8 +312,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = Y68XHDN4DX;
+					};
+				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "__CLI__" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HelloCordova" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -416,12 +419,12 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				F5E82815F172490BBE25BC84 /* IonicKeyboard.m in Sources */,
-				810694832D4149FFBDBEF82C /* UIWebViewExtension.m in Sources */,
-				4462B6AB1CCA427C950F2FBC /* CDVLogger.m in Sources */,
-				0059AE0D2E584F36AE63C09B /* CDVDevice.m in Sources */,
-				9EBEC486B9324220B9BC1813 /* CDVSplashScreen.m in Sources */,
-				F560B94F092943A884DF7ABC /* CDVViewController+SplashScreen.m in Sources */,
+				D3B841D394D5481B990A157F /* IonicKeyboard.m in Sources */,
+				CC6C9C1E56E8422D8550CDA2 /* UIWebViewExtension.m in Sources */,
+				F5F5E686600A45C4A71A5D02 /* CDVLogger.m in Sources */,
+				FD66E17991E545D98903C378 /* CDVDevice.m in Sources */,
+				88DA936D71904E6995B39472 /* CDVSplashScreen.m in Sources */,
+				2BC19E5F6E4842C88B5D1510 /* CDVViewController+SplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +444,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -462,7 +467,8 @@
 					"-weak-lSystem",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "HelloCordova";
+				PRODUCT_NAME = HelloCordova;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -472,6 +478,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloCordova/HelloCordova-Prefix.pch";
@@ -491,7 +499,8 @@
 					"-weak-lSystem",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "HelloCordova";
+				PRODUCT_NAME = HelloCordova;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -595,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "__CLI__" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HelloCordova" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
