@@ -1,33 +1,40 @@
-CrAc prototype
+crac-ionic
 =====================
 
-Prototype for the project CooperativeActivities.
+Prototype for the CooperativeActivities app made with ionic.
 
-## Installation
+## Using this project
 
-After checkout, execute the following commands.
-
-```bash
-$ npm install && bower install
-```
+After checkout of the project run
 
 ```bash
-$ ionic serve
+$ npm install
 ```
- to boot up a local server.
 
-## Build Apps
+to install cordova and it's dependencies. Then add specific platforms:
 
-To build platform specific apps, run following commands:
+```bash
+$ ionic platform add ios
+$ ionic platform add android
+```
+
+To build  execute following commands:
 
 ```bash
 $ ionic build ios
-```
-
-```bash
 $ ionic build android
 ```
 
+To emulate on a platform run following commands:
+
+```bash
+$ ionic emulate ios
+$ ionic emulate android
+```
+
+# Install app in iOS
+
+To install the app on iOS, switch to the folder /platforms/ios and open the xcode-Project.
 
 ## Issues
 May come.
