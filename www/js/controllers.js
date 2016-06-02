@@ -52,3 +52,49 @@ angular.module('app.controllers', [])
 .controller('einstellungenCtrl', function($scope) {
 
 })
+
+.controller('LoginCtrl', function ($window,$scope,$location, $route, AuthenticationService,FlashService) {
+
+    $scope.logout = function () {
+        // reset login status
+        AuthenticationService.ClearCredentials();
+        AuthenticationService.Logout();
+        $location.path('/user');
+        $window.location.reload();
+    };
+
+    $scope.loggedIn = $scope.globals.currentUser;
+
+
+    $scope.login = function login(){
+        console.log("in login");
+        console.log($scope);
+
+        $scope.dataLoading = true;
+
+        //debugger;
+        AuthenticationService.Login($scope.username, $scope.password, function (response) {
+            if (response.success) {
+                console.log("in login - AuthenticationService.Login == successed");
+                console.log("Response: "+response);
+                //AuthenticationService.SetCredentials($scope.username, $scope.password);
+                $scope.loggedIn = true;
+
+                FlashService.Success("Eingeloggt!");
+
+                if($scope.globals.currentUser.isAdmin)
+                    $location.path('/user');
+                else
+                    $location.path('/failed');
+
+                $window.location.reload();
+            } else {
+                console.log("in login - AuthenticationService.Login == failed");
+                FlashService.Error(response.message);
+                $scope.dataLoading = false;
+                $scope.loggedIn = false;
+            }
+        });
+        console.log("in login - AuthenticationService.Login == passed");
+    };
+})
