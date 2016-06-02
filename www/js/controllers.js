@@ -18,15 +18,10 @@ angular.module('app.controllers', [])
 
 .controller('loginCtrl', function($scope, UserDataService) {
 
-	var user =
-	{
-		// Get the user from a authentication service (FABIAN)
-	};
-
-	UserDataService.getUserLogin(user).then(
+	// Get the user from a authentication service before (FABIAN --> basic auth)
+	UserDataService.getUserById(2).then(
 		function($res){
 			console.log($res.data);
-
 		},
 		function($error){
 			console.log($error);
