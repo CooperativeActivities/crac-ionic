@@ -12,7 +12,15 @@ $ npm install
 $ bower install
 ```
 
-to install third party dependencies. Then add specific platforms:
+to install third party dependencies.
+If cordova-specific errors occur, install cordova and ionic separately and globally on your machine:
+
+```bash
+$ sudo npm install -g cordova
+$ sudo npm install -g ionic
+```
+
+Then add specific platforms:
 
 ```bash
 $ ionic platform add ios
