@@ -9,7 +9,7 @@ angular.module('app.services', [])
 
 	// Send current user data as basic auth
 	srv.getUserLogin = function(user){
-		return $http.post(srv._baseURL + "user/login", user);
+		return $http.get(srv._baseURL + "user/login", user);
 	}
 
 	/**
