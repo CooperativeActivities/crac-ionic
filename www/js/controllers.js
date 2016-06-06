@@ -1,9 +1,8 @@
 angular.module('app.controllers', [])
 
 .controller('neuigkeitenCtrl', function($scope, $http) {
-    $http.get('../localData/news.json').success(function(response) {
-        $scope.newslist = response;
-        console.log($scope);
+    $http.get('data/news_dummy.json').success(function(data) {
+        $scope.newsList = data;
     });
 })
 
@@ -41,19 +40,23 @@ angular.module('app.controllers', [])
 .controller('organisationCtrl', function($scope) {
 
 })
-    
+
+
 
 .controller('meinProfilCtrl', function($scope, $http) {
 
 	// Get local JSON
 	$http.get('data/user_dummy.json').success(function(data) {
-   	$scope.user = data;
+   	    $scope.user = data;
 	});
 
 })
 
-.controller('projekteCtrl', function($scope) {
+.controller('projekteCtrl', function($scope, $http) {
 
+        $http.get('data/project_tasklist_dummy.json').success(function(data) {
+            $scope.projectList = data;
+        });
 })
 
 .controller('gelSchteAufgabenCtrl', function($scope) {
@@ -119,9 +122,3 @@ angular.module('app.controllers', [])
     };
 	 */
 })
-
-.controller('MainCtrl', function($scope, webtest) {
-    webtest.fetch().then(function(data) {
-        $scope.data = data;
-    })
-});

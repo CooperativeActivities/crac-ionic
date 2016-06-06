@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "testProject",
+    "childTasks": [
+      {
+        "id": 1,
+        "name": "testTask"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "AnotherProject"
+  }
+]
