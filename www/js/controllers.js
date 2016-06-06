@@ -1,7 +1,10 @@
 angular.module('app.controllers', [])
 
-.controller('neuigkeitenCtrl', function($scope) {
-
+.controller('neuigkeitenCtrl', function($scope, $http) {
+    $http.get('../localData/news.json').success(function(response) {
+        $scope.newslist = response;
+        console.log($scope);
+    });
 })
 
 .controller('entdeckungsreiseCtrl', function($scope) {
@@ -116,3 +119,9 @@ angular.module('app.controllers', [])
     };
 	 */
 })
+
+.controller('MainCtrl', function($scope, webtest) {
+    webtest.fetch().then(function(data) {
+        $scope.data = data;
+    })
+});
