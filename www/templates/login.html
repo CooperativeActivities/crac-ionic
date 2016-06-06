@@ -4,15 +4,18 @@
             <ion-list>
                 <label class="item item-input" name="email">
                     <span class="input-label">Email</span>
-                    <input type="text" placeholder="">
+                    <input type="email" placeholder="frontend@test.at" required ng-model="input.email">
                 </label>
                 <label class="item item-input" name="password">
                     <span class="input-label">Passwort</span>
-                    <input type="password" placeholder="">
+                    <input type="password" placeholder="frontendKey" required ng-model="input.password">
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
-            <a ui-sref="tabsController.neuigkeiten" id="login-button1" class="button button-stable  button-block">Einloggen</a>
+				<!--
+            <a id="login-button1" class="button button-stable button-block" ng-click="checkLogin(input.email, input.password)">Einloggen</a>
+			-->
+            <input type="submit" id="login-button1" class="button button-stable button-block" ng-click="checkLogin(input.email, input.password)" value="Einloggen" />
             <a ui-sref="registrierung" id="login-button2" class="button button-positive  button-block button-clear">Neuen Account anlegen</a>
             <a ui-sref="entdeckungsreise" id="login-button6" class="button button-positive  button-block button-clear">Entdeckungsreise</a>
         </form>

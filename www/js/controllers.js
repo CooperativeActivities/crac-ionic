@@ -18,7 +18,30 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('loginCtrl', function($scope, UserDataService) {
+.controller('loginCtrl', function($scope, $http, $location, UserDataService) {
+
+	$scope.checkLogin = function(email, password) {
+
+		console.log(email);
+		console.log(password);
+		// Check if demo-user (frontend@test.at; frontendKey)
+		if(email === "frontend@test.at" &&
+			password === "frontendKey")
+		{
+
+			// Get local JSON
+			$http.get('data/login_dummy.json').success(function(data) {
+				$scope.login = data;
+			});
+			console.log("ok");
+
+			$location.path("/tabs/footer_news");
+		
+		}
+		else {
+			console.log("error");
+		}
+	}
 
 	// Get the user from a authentication service before (basic auth)
 	/*
@@ -31,6 +54,8 @@ angular.module('app.controllers', [])
 		}
 	);
 	*/
+
+
 })
 
 .controller('registrierungCtrl', function($scope) {
@@ -67,7 +92,8 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('LoginCtrl', function ($window,$scope,$location, $route, AuthenticationService,FlashService) {
+.controller('LoginCtrl', function ($window, $scope, $location, $route, AuthenticationService, FlashService) {
+
 
 
 
