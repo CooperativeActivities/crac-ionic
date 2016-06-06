@@ -1,3 +1,10 @@
 <ion-view title="Neuigkeiten" id="page2">
-    <ion-content padding="true" class="has-header"></ion-content>
+    <ion-content padding="true" class="has-header">
+
+        <div ng-repeat="news in newslist">
+            <div ng-bind-template="ID: {{news.id }}"></div>
+            <div ng-bind-template="Name: {{news.name }}"></div>
+        </div>
+
+    </ion-content>
 </ion-view>
