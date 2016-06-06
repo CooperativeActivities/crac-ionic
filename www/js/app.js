@@ -10,9 +10,13 @@ angular.module('app', [
 	'app.controllers',
 	'app.routes',
 	'app.services',
-	'app.directives',
-    'lib/authentication.service',
-    'lib/flash.service'])
+	'app.directives'
+
+	// Use this part for login with Server
+	//	'app.directives',
+	//    'lib/authentication.service',
+	//    'lib/flash.service'
+ ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

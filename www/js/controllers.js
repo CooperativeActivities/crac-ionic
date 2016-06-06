@@ -18,7 +18,8 @@ angular.module('app.controllers', [])
 
 .controller('loginCtrl', function($scope, UserDataService) {
 
-	// Get the user from a authentication service before (FABIAN --> basic auth)
+	// Get the user from a authentication service before (basic auth)
+	/*
 	UserDataService.getUserById(2).then(
 		function($res){
 			console.log($res.data);
@@ -27,6 +28,7 @@ angular.module('app.controllers', [])
 			console.log($error);
 		}
 	);
+	*/
 })
 
 .controller('registrierungCtrl', function($scope) {
@@ -54,6 +56,15 @@ angular.module('app.controllers', [])
 })
 
 .controller('LoginCtrl', function ($window,$scope,$location, $route, AuthenticationService,FlashService) {
+
+
+
+
+	/*
+	 * ---------------------------
+    *      LOGIN SERVER
+	 * ---------------------------
+
 
     $scope.logout = function () {
         // reset login status
@@ -97,4 +108,5 @@ angular.module('app.controllers', [])
         });
         console.log("in login - AuthenticationService.Login == passed");
     };
+	 */
 })

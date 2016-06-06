@@ -55,7 +55,7 @@ angular.module('app.services', [])
 	    "email":"asd@asd"
 	 }
 	 */
-   srv.updateUserById(id, newUserData) = function(id){
+   srv.updateUserById = function(id, newUserData){
 		return $http.put(srv._baseURL + "user/" + id, newUserData);
 	}
 
