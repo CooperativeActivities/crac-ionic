@@ -38,6 +38,7 @@ angular.module('app.controllers', [])
 .controller('organisationCtrl', function($scope) {
 
 })
+    
 
 .controller('meinProfilCtrl', function($scope, $http) {
 
