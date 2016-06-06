@@ -85,7 +85,7 @@ angular.module('app.services', [])
 		 },
 		 updateUserById : function(id, newUserData){
 			 return srv.updateUserById(id, newUserData);
-		 }
+		 },
 		 getCurrentUser : function(){
 			return srv.getCurrentUser();
 		 }
