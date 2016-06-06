@@ -42,7 +42,12 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('meinProfilCtrl', function($scope) {
+.controller('meinProfilCtrl', function($scope, $http) {
+
+	// Get local JSON
+	$http.get('data/user_dummy.json').success(function(data) {
+   	$scope.user = data;
+	});
 
 })
 

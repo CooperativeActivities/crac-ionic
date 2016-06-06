@@ -1,0 +1,9 @@
+{
+    "name":"currentUser",
+    "password": "test",
+    "role":"ADMIN",
+    "firstName":"TestHans",
+    "lastName":"TestName",
+    "phone":"234",
+    "email":"asd@asd"
+}
