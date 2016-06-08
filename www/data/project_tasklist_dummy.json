@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Adventbasar",
+    "childTasks": [
+      {
+        "id": 1,
+        "name": "Tische Organisieren"
+      },
+      {
+        "id": 2,
+        "name": "Kassa"
+      },
+      {
+        "id": 3,
+        "name": "Betreuung"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "AnotherProject"
+  }
+]

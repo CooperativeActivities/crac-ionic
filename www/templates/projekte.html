@@ -1,3 +1,10 @@
 <ion-view title="Projekte" id="page10">
-    <ion-content padding="true" class="has-header"></ion-content>
+    <ion-content padding="true" class="has-header">
+
+        <div ng-repeat="project in projectList">
+            <div ng-bind-template="ID: {{project.id }}"></div>
+            <div ng-bind-template="Name: {{project.name }}"></div>
+        </div>
+
+    </ion-content>
 </ion-view>

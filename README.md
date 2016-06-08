@@ -46,4 +46,13 @@ $ ionic emulate android
 To install the app on iOS, switch to the folder /platforms/ios and open the xcode-Project.
 
 ## Issues
-May come.
+If Android is not installed:
+
+```bash
+npm install android
+```
+
+## Ressources
+
+http://ionicframework.com/docs/cli/ -- CLI Beschreibung
+http://ionicframework.com/docs/components/ -- Components

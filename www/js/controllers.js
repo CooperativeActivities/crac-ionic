@@ -1,7 +1,9 @@
 angular.module('app.controllers', [])
 
-.controller('neuigkeitenCtrl', function($scope) {
-
+.controller('neuigkeitenCtrl', function($scope, $http) {
+    $http.get('data/news_dummy.json').success(function(data) {
+        $scope.newsList = data;
+    });
 })
 
 .controller('entdeckungsreiseCtrl', function($scope) {
@@ -16,27 +18,28 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('loginCtrl', function($scope, $http, $location, UserDataService) {
+.controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
+	$ionicSideMenuDelegate.canDragContent(false);
 
 	$scope.checkLogin = function(email, password) {
 
+		console.log(email);
+		console.log(password);
 		// Check if demo-user (frontend@test.at; frontendKey)
 		if(email === "frontend@test.at" &&
 			password === "frontendKey")
 		{
 
-			$scope.hasWrongCredentials = false;
-
 			// Get local JSON
 			$http.get('data/login_dummy.json').success(function(data) {
 				$scope.login = data;
 			});
+			console.log("ok");
 
-			// Go to "neuigkeiten"
 			$location.path("/tabs/footer_news");
+		
 		}
 		else {
-			$scope.hasWrongCredentials = true;
 			console.log("error");
 		}
 	}
@@ -52,6 +55,8 @@ angular.module('app.controllers', [])
 		}
 	);
 	*/
+
+
 })
 
 .controller('registrierungCtrl', function($scope) {
@@ -62,17 +67,22 @@ angular.module('app.controllers', [])
 
 })
 
+
+
 .controller('meinProfilCtrl', function($scope, $http) {
 
 	// Get local JSON
 	$http.get('data/user_dummy.json').success(function(data) {
-   	$scope.user = data;
+   	    $scope.user = data;
 	});
 
 })
 
-.controller('projekteCtrl', function($scope) {
+.controller('projekteCtrl', function($scope, $http) {
 
+        $http.get('data/project_tasklist_dummy.json').success(function(data) {
+            $scope.projectList = data;
+        });
 })
 
 .controller('gelSchteAufgabenCtrl', function($scope) {
