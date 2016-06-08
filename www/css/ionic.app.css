@@ -9775,6 +9775,9 @@ a.button {
   width: 100%;
   height: 100%; }
 
+.smaller {
+  font-size: smaller !important; }
+
 /*
  * Use this file for  custom changes <3
  */
