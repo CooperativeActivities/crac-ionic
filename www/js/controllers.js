@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-	
+
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $sceDelegateProvider) {
 	// tab bar android to bottom (default: top)
 	$ionicConfigProvider.tabs.position('bottom');
@@ -21,7 +21,7 @@ angular.module('app.controllers', [])
 
         $scope.newsList = newsList;
     });
-        
+
 })
 
 .controller('entdeckungsreiseCtrl', function($scope) {
@@ -81,8 +81,20 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('organisationCtrl', function($scope) {
+.controller('organisationCtrl', function($scope, $http) {
 
+	// REST-Call: /projects
+	// Display ALL projects. In this domain we haven't modelled organizations, so every
+	// project belongs to this organization.
+	// Further: Because images aren't handled in the backend, i manipulated the json
+	// a bit and added a local imagepath.
+	// Additional further: CUrrently a task does NOT have a "fullfilled" state, so
+	// when this task is marked as complete --> also added in dummy json
+
+	// Get local JSON
+	$http.get('data/organisation_projects.json').success(function(data) {
+		 $scope.projects = data;
+	});
 })
 
 

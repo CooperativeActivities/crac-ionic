@@ -5,7 +5,43 @@
     "description": "Wieder veranstalten wir diese Jahr einen Adventbasar.",
     "location": "Waldorfschule, Hagenberg",
     "startTime": "2016-12-20T15:00:00",
-    "endTime": "2016-12-20T21:00:00"
+    "endTime": "2016-12-20T21:00:00",
+	 "imagePath": "img/adventbasar.jpg",
+	 "childTasks": [
+		{
+		  "id": 1,
+		  "name": "Tische Organisieren",
+		  "description": "Verkaufstische müssen organisiert werden",
+		  "location": "Waldorfschule, Hagenberg",
+		  "startTime": "2016-12-20T15:00:00",
+		  "endTime": "2016-12-20T21:00:00",
+		  "urgency": 4,
+		  "amountOfVolunteers": 1,
+		  "completed": false
+		},
+		{
+		  "id": 2,
+		  "name": "Kassier",
+		  "description": "Kassier wird benötigt",
+		  "location": "Waldorfschule, Hagenberg",
+		  "startTime": "2016-12-20T15:00:00",
+		  "endTime": "2016-12-20T21:00:00",
+		  "urgency": 4,
+		  "amountOfVolunteers": 2,
+		  "completed": false
+		},
+		{
+		  "id": 3,
+		  "name": "Betreuung",
+		  "description": "Aufsichtspersonen werden gesucht!",
+		  "location": "Waldorfschule, Hagenberg",
+		  "startTime": "2016-12-20T15:00:00",
+		  "endTime": "2016-12-20T21:00:00",
+		  "urgency": 4,
+		  "amountOfVolunteers": 3,
+		  "completed": false
+		}
+	 ]
 	 },
 	 {
 		 "id": 2,
@@ -13,7 +49,43 @@
 		 "description": "Wieder veranstalten wir diese Jahr eine Sommergrillerei.",
 		 "location": "Waldorfschule, Hagenberg",
 		 "startTime": "2016-06-20T12:00:00",
-		 "endTime": "2016-06-20T21:00:00"
+		 "endTime": "2016-06-20T21:00:00",
+		 "imagePath": "img/grillerei.jpg",
+		 "childTasks": [
+			{
+			  "id": 1,
+			  "name": "Tische Organisieren",
+			  "description": "Verkaufstische müssen organisiert werden",
+			  "location": "Waldorfschule, Hagenberg",
+			  "startTime": "2016-12-20T15:00:00",
+			  "endTime": "2016-12-20T21:00:00",
+			  "urgency": 4,
+			  "amountOfVolunteers": 1,
+			  "completed": true
+			},
+			{
+			  "id": 2,
+			  "name": "Kassier",
+			  "description": "Kassier wird benötigt",
+			  "location": "Waldorfschule, Hagenberg",
+			  "startTime": "2016-12-20T15:00:00",
+			  "endTime": "2016-12-20T21:00:00",
+			  "urgency": 4,
+			  "amountOfVolunteers": 2,
+			  "completed": true
+			},
+			{
+			  "id": 3,
+			  "name": "Betreuung",
+			  "description": "Aufsichtspersonen werden gesucht!",
+			  "location": "Waldorfschule, Hagenberg",
+			  "startTime": "2016-12-20T15:00:00",
+			  "endTime": "2016-12-20T21:00:00",
+			  "urgency": 4,
+			  "amountOfVolunteers": 3,
+			  "completed": true
+			}
+		 ]
 	 },
 	 {
 		 "id": 3,
@@ -21,6 +93,42 @@
 		 "description": "Umzugsbedingt verschenkt Fabian Dopler zu wohltätigem Zwecke diverse Kleidungsstücke.",
 		 "location": "Fabians Place, Linz",
 		 "startTime": "2016-04-20T12:00:00",
-		 "endTime": "2016-04-20T21:00:00"
+		 "endTime": "2016-04-20T21:00:00",
+		 "imagePath": "img/kleider.jpg",
+		 "childTasks": [
+			{
+			  "id": 1,
+			  "name": "Tische Organisieren",
+			  "description": "Verkaufstische müssen organisiert werden",
+			  "location": "Waldorfschule, Hagenberg",
+			  "startTime": "2016-12-20T15:00:00",
+			  "endTime": "2016-12-20T21:00:00",
+			  "urgency": 4,
+			  "amountOfVolunteers": 1,
+			  "completed": false
+			},
+			{
+			  "id": 2,
+			  "name": "Kassier",
+			  "description": "Kassier wird benötigt",
+			  "location": "Waldorfschule, Hagenberg",
+			  "startTime": "2016-12-20T15:00:00",
+			  "endTime": "2016-12-20T21:00:00",
+			  "urgency": 4,
+			  "amountOfVolunteers": 2,
+			  "completed": true
+			},
+			{
+			  "id": 3,
+			  "name": "Betreuung",
+			  "description": "Aufsichtspersonen werden gesucht!",
+			  "location": "Waldorfschule, Hagenberg",
+			  "startTime": "2016-12-20T15:00:00",
+			  "endTime": "2016-12-20T21:00:00",
+			  "urgency": 4,
+			  "amountOfVolunteers": 3,
+			  "completed": true
+			}
+		 ]
 	 }
 ]

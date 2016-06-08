@@ -18,5 +18,28 @@
 			<a class="button button-stable button-outline">abgeschl. Projekte</a>
 		</div>
 
+		<div class="list list-inset">
+			 <a ng-repeat="project in projects"
+				 href="#/projekt/{{project.id}}"
+				 class="item">
+
+				 <div class="row">
+				 	<div class="col col-25" style="
+						background: url('{{project.imagePath}}');
+						background-size: cover;
+						height: 100px;">
+				 	</div>
+
+					<div class="col padding-left">
+						<h2>{{ project.name }}</h2>
+						<h4>{{ project.description }}</h4>
+					</div>
+				 </div>
+
+
+
+			 </a>
+		</div>
+
 	</ion-content>
 </ion-view>
