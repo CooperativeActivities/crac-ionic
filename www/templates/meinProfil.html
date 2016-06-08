@@ -3,32 +3,75 @@
 		<div class="list card">
 
 			<div class="item item-avatar">
-				<img src="mcfly.jpg">
-				<h2>Marty McFly</h2>
-				<p>November 05, 1955</p>
+				<img src="img/user.jpg">
+				<h2>{{user.firstName}} {{user.lastName}}</h2>
+				<p>Username: {{user.name}}</p>
 			</div>
 
 			<div class="item item-body">
+				<div class="item item-divider">
+					Daten
+				</div>
+
+				<div class="list">
+					<a class="item item-icon-left item-icon-right" href="#">
+						<i class="icon ion-email"></i>
+						{{user.email}}
+						<i class="icon ion-edit smaller"></i>
+					</a>
+					<a class="item item-icon-left item-icon-right" href="#">
+						<i class="icon ion-ios-telephone"></i>
+						{{user.phone}}
+						<i class="icon ion-edit smaller"></i>
+					</a>
+					<a class="item item-icon-left" href="#">
+						<i class="icon ion-person-stalker"></i>
+						{{user.role}}
+					</a>
+				</div>
+
+				<div class="item item-divider">
+					Interessen
+				</div>
+
+				<div class="list" href="#">
+					<a class="item">
+						<button class="button button-outline button-positive button-small">
+							Blasmusik
+							<i class="icon ion-ios-close-outline smaller"></i>
+						</button>
+						<button class="button button-outline button-positive button-small">
+							Auto
+							<i class="icon ion-ios-close-outline smaller"></i>
+						</button>
+						<button class="button button-positive button-small">
+							Hinzufügen
+						</button>
+					</a>
+				</div>
+				<!--
 				<img class="full-image" src="delorean.jpg">
+
 				<p>
 					This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
 					the content is from a card-body consisting of an image and paragraph text. The footer
 					consists of tabs, icons aligned left, within the card-footer.
 				</p>
-				<p>
-					<a href="#" class="subdued">1 Like</a>
-					<a href="#" class="subdued">5 Comments</a>
-				</p>
-			</div>
+				-->
+
+				<div class="item item-divider">
+					Datenschutz
+				</div>
+
+				<div class="list" href="#">
+					<a class="item">
+						<button class="button button-full button-assertive">
+							Account löschen
+						</button>
+					</a>
+				</div>
 
 		</div>
-
-		<p>Username: {{user.name}}</p>
-		 <p>Rolle: {{user.role}}</p>
-		 <p>Vorname: {{user.firstName}}</p>
-		 <p>Zuname: {{user.lastName}}</p>
-		 <p>Telefon: {{user.phone}}</p>
-		 <p>Email: {{user.email}}</p>
     </ion-content>
 </ion-view>
 
