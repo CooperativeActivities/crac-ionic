@@ -1,10 +1,7 @@
 angular.module('app.controllers', [])
 
-.controller('neuigkeitenCtrl', function($scope, $http) {
-    $http.get('../localData/news.json').success(function(response) {
-        $scope.newslist = response;
-        console.log($scope);
-    });
+.controller('neuigkeitenCtrl', function($scope) {
+
 })
 
 .controller('entdeckungsreiseCtrl', function($scope) {
@@ -23,23 +20,23 @@ angular.module('app.controllers', [])
 
 	$scope.checkLogin = function(email, password) {
 
-		console.log(email);
-		console.log(password);
 		// Check if demo-user (frontend@test.at; frontendKey)
 		if(email === "frontend@test.at" &&
 			password === "frontendKey")
 		{
 
+			$scope.hasWrongCredentials = false;
+
 			// Get local JSON
 			$http.get('data/login_dummy.json').success(function(data) {
 				$scope.login = data;
 			});
-			console.log("ok");
 
+			// Go to "neuigkeiten"
 			$location.path("/tabs/footer_news");
-		
 		}
 		else {
+			$scope.hasWrongCredentials = true;
 			console.log("error");
 		}
 	}
@@ -55,8 +52,6 @@ angular.module('app.controllers', [])
 		}
 	);
 	*/
-
-
 })
 
 .controller('registrierungCtrl', function($scope) {
@@ -144,9 +139,3 @@ angular.module('app.controllers', [])
     };
 	 */
 })
-
-.controller('MainCtrl', function($scope, webtest) {
-    webtest.fetch().then(function(data) {
-        $scope.data = data;
-    })
-});
