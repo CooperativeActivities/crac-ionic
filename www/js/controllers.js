@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-	
+
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 	$ionicConfigProvider.tabs.position('bottom');  })
 
@@ -22,13 +22,12 @@ angular.module('app.controllers', [])
 })
 
 .controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
+
 	// deactivate swipe possibility (for sidebar)
 	$ionicSideMenuDelegate.canDragContent(false);
 
 	$scope.checkLogin = function(email, password) {
 
-		console.log(email);
-		console.log(password);
 		// Check if demo-user (frontend@test.at; frontendKey)
 		if(email === "frontend@test.at" &&
 			password === "frontendKey")
@@ -41,10 +40,9 @@ angular.module('app.controllers', [])
 			$http.get('data/login_dummy.json').success(function(data) {
 				$scope.login = data;
 			});
-			console.log("ok");
 
+			// Switch to desired location
 			$location.path("/tabs/footer_news");
-
 		}
 		else {
 			$scope.hasWrongCredentials = true;
@@ -62,8 +60,6 @@ angular.module('app.controllers', [])
 		}
 	);
 	*/
-
-
 })
 
 .controller('registrierungCtrl', function($scope) {
