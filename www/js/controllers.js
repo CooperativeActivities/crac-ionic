@@ -9,10 +9,11 @@ angular.module('app.controllers', [])
 })
 
 .controller('neuigkeitenCtrl', function($scope, $http) {
+
+    //SHOW ALL NEW TASKS FROM ORGANISATION
+
     $http.get('data/project_tasklist_dummy.json').success(function(data) {
-
         var newsList = [];
-
         angular.forEach(data, function(item){
             angular.forEach(item.childTasks, function(item){
                 newsList.push(item);
@@ -21,7 +22,6 @@ angular.module('app.controllers', [])
 
         $scope.newsList = newsList;
     });
-        
 })
 
 .controller('entdeckungsreiseCtrl', function($scope) {
@@ -30,10 +30,25 @@ angular.module('app.controllers', [])
 
 .controller('benachrichtigungenCtrl', function($scope) {
 
+    //SHOW CHANGES OF FOLLOWED AND ACCEPTED TASKS FROM USER
+
 })
 
-.controller('aufgabenCtrl', function($scope) {
+.controller('aufgabenCtrl', function($scope, $http) {
 
+
+    //SHOW ALL ACCEPTED TASKS FROM USER
+
+    $http.get('data/project_tasklist_dummy.json').success(function(data) {
+        var taskList = [];
+        angular.forEach(data, function(item){
+            angular.forEach(item.childTasks, function(item){
+                taskList.push(item);
+            })
+        })
+
+        $scope.taskList = taskList;
+    });
 })
 
 .controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
@@ -98,9 +113,9 @@ angular.module('app.controllers', [])
 
 .controller('projekteCtrl', function($scope, $http) {
 
-    $http.get('data/project_tasklist_dummy.json').success(function(data) {
-        $scope.projectList = data;
-    });
+        $http.get('data/project_tasklist_dummy.json').success(function(data) {
+            $scope.projectList = data;
+        });
 })
 
 .controller('gelSchteAufgabenCtrl', function($scope) {
