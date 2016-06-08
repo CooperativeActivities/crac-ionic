@@ -18,8 +18,8 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('loginCtrl', function($scope, $http, $location, UserDataService) {
-
+.controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
+	$ionicSideMenuDelegate.canDragContent(false);
 
 	$scope.checkLogin = function(email, password) {
 
