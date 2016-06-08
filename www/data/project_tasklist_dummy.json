@@ -2,23 +2,61 @@
   {
     "id": 1,
     "name": "Adventbasar",
+    "description": "Wieder veranstalten wir diese Jahr einen Adventbasar.",
+    "location": "Waldorfschule, Hagenberg",
+    "startTime": "2016-12-20T15:00:00",
+    "endTime": "2016-12-20T21:00:00",
     "childTasks": [
       {
         "id": 1,
-        "name": "Tische Organisieren"
+        "name": "Tische Organisieren",
+        "description": "Verkaufstische müssen organisiert werden",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 1
       },
       {
         "id": 2,
-        "name": "Kassa"
+        "name": "Kassier",
+        "description": "Kassier wird benötigt",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 2
       },
       {
         "id": 3,
-        "name": "Betreuung"
+        "name": "Betreuung",
+        "description": "Aufsichtspersonen werden gesucht!",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 3
       }
     ]
   },
   {
     "id": 2,
-    "name": "AnotherProject"
+    "name": "AnotherProject",
+    "description": "project 2",
+    "location": "Waldorfschule, Hagenberg",
+    "startTime": "2016-12-150T09:00:00",
+    "endTime": "2016-12-15T12:00:00",
+    "childTasks": [
+      {
+        "id": 1,
+        "name": "testTask",
+        "description": "test task desc",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-150T09:00:00",
+        "endTime": "2016-12-15T12:00:00",
+        "urgency": 2,
+        "amountOfVolunteers": 1
+      }
+    ]
   }
 ]
