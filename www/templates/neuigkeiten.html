@@ -2,19 +2,58 @@
     <ion-content padding="true" class="has-header">
 
         <div class="list list-inset">
-            <a ng-repeat="item in newsList"
-               href="#/{{item.id}}"
-               class="item">
+            <div class="item item-divider">
+                Adventbasar - Neue Aufgaben
+            </div>
 
-                <h2>{{ item.name }}</h2>
-                <h4>{{ item.description }}</h4>
-                <span>{{ item.startTime | date:'dd. MMM'}}</span>
-                <span>{{ item.location }}</span>
-                <span>Zusagen</span>
-                <span>Folgen</span>
-                <span>F... Mehr info</span>
+            <div class="item newsItem" ng-repeat="item in newsList | orderBy: 'startTime'">
 
-            </a>
+                <dic class="row">
+                    <div class="col">
+                        <a href="#/{{item.id}}">
+                            <h2>{{ item.name }}</h2>
+                        </a>
+                    </div>
+                </dic>
+
+                <dic class="row">
+                    <div class="col">
+                        <h3>{{ item.description | limitTo:150}}</h3>
+                    </div>
+                </dic>
+
+                <div class="row">
+                    <div class="col">
+                        <span class="ion-calendar" data-pack="default"></span>
+                        {{ item.startTime | date:'dd. MMM'}}
+                    </div>
+                    <div class="col">
+                        <span class="ion-ios-location" data-pack="default"></span>
+                        {{ item.location }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <a href="#">
+                            <div class="ion-checkmark" data-pack="default" data-tags="complete, finished, success, on"></div>
+                            <div>Zusagen</div>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a href="#" >
+                            <div class="ion-star" data-pack="default" data-tags="complete, finished, success, on"></div>
+                            <div>Folgen</div>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a href="#">
+                            <div class="ion-more" data-pack="default" data-tags="complete, finished, success, on"></div>
+                            <div>Mehr Info</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </ion-content>

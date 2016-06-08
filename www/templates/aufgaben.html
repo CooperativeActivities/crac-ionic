@@ -1,3 +1,61 @@
-<ion-view title="Aufgaben" id="page4">
-    <ion-content padding="true" class="has-header"></ion-content>
+<ion-view title="Meine Aufgaben" id="page4">
+    <ion-content padding="true" class="has-header">
+
+        <div class="list list-inset">
+
+            <div class="item item-divider">
+                Zugesagte Aufgaben
+            </div>
+
+            <div class="item taskItem" ng-repeat="item in taskList | orderBy: 'startTime'">
+
+                <dic class="row">
+                    <div class="col">
+                        <a href="#/{{item.id}}">
+                            <h2>{{ item.name }}</h2>
+                        </a>
+                    </div>
+                </dic>
+
+                <dic class="row">
+                    <div class="col">
+                        <h3>{{ item.description | limitTo:150 }}</h3>
+                    </div>
+                </dic>
+
+                <div class="row">
+                    <div class="col">
+                        <span class="ion-calendar" data-pack="default"></span>
+                        {{ item.startTime | date:'dd. MMM'}}
+                    </div>
+                    <div class="col">
+                        <span class="ion-ios-location" data-pack="default"></span>
+                        {{ item.location }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <a href="#">
+                            <div class="ion-minus-round" data-pack="default" data-tags="complete, finished, success, on"></div>
+                            <div>Absagen</div>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a href="#" >
+                            <div class="ion-ios-star-outline" data-pack="default" data-tags="complete, finished, success, on"></div>
+                            <div>Nicht mehr folgen</div>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a href="#">
+                            <div class="ion-more" data-pack="default" data-tags="complete, finished, success, on"></div>
+                            <div>Mehr Info</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
 </ion-view>

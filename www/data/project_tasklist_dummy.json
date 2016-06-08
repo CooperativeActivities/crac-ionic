@@ -52,7 +52,7 @@
         "name": "testTask",
         "description": "test task desc",
         "location": "Waldorfschule, Hagenberg",
-        "startTime": "2016-12-150T09:00:00",
+        "startTime": "2016-12-15T09:00:00",
         "endTime": "2016-12-15T12:00:00",
         "urgency": 2,
         "amountOfVolunteers": 1
