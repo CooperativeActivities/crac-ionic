@@ -1,7 +1,12 @@
 angular.module('app.controllers', [])
+	
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $sceDelegateProvider) {
+	// tab bar android to bottom (default: top)
+	$ionicConfigProvider.tabs.position('bottom');
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-	$ionicConfigProvider.tabs.position('bottom');  })
+	//allow youtube videos
+	$sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
+})
 
 .controller('neuigkeitenCtrl', function($scope, $http) {
     $http.get('data/news_dummy.json').success(function(data) {
