@@ -41,9 +41,30 @@ $ ionic emulate ios
 $ ionic emulate android
 ```
 
+To start the web-view, run
+
+```bash
+$ ionic serve
+```
+
+To get ios and android in comparison in the webview, run
+
+```bash
+$ ionic serve --lab
+```
+
 ## Install app in iOS
 
 To install the app on iOS, switch to the folder /platforms/ios and open the xcode-Project.
 
 ## Issues
-May come.
+If Android is not installed:
+
+```bash
+npm install android
+```
+
+## Ressources
+
+http://ionicframework.com/docs/cli/ -- CLI Beschreibung
+http://ionicframework.com/docs/components/ -- Components

@@ -1,4 +1,12 @@
 angular.module('app.controllers', [])
+	
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $sceDelegateProvider) {
+	// tab bar android to bottom (default: top)
+	$ionicConfigProvider.tabs.position('bottom');
+
+	//allow youtube videos
+	$sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
+})
 
 .controller('neuigkeitenCtrl', function($scope, $http) {
     $http.get('data/project_tasklist_dummy.json').success(function(data) {
@@ -13,8 +21,6 @@ angular.module('app.controllers', [])
 
         $scope.newsList = newsList;
     });
-
-    console.log($scope);
         
 })
 
@@ -31,28 +37,30 @@ angular.module('app.controllers', [])
 })
 
 .controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
+
+	// deactivate swipe possibility (for sidebar)
 	$ionicSideMenuDelegate.canDragContent(false);
 
 	$scope.checkLogin = function(email, password) {
 
-		console.log(email);
-		console.log(password);
 		// Check if demo-user (frontend@test.at; frontendKey)
 		if(email === "frontend@test.at" &&
 			password === "frontendKey")
 		{
 
+			// Get visual error msg
+			$scope.hasWrongCredentials = false;
+
 			// Get local JSON
 			$http.get('data/login_dummy.json').success(function(data) {
 				$scope.login = data;
 			});
-			console.log("ok");
 
+			// Switch to desired location
 			$location.path("/tabs/footer_news");
-		
 		}
 		else {
-			console.log("error");
+			$scope.hasWrongCredentials = true;
 		}
 	}
 
@@ -67,8 +75,6 @@ angular.module('app.controllers', [])
 		}
 	);
 	*/
-
-
 })
 
 .controller('registrierungCtrl', function($scope) {
