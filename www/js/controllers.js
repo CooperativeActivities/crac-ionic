@@ -1,4 +1,7 @@
 angular.module('app.controllers', [])
+	
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+	$ionicConfigProvider.tabs.position('bottom');  })
 
 .controller('neuigkeitenCtrl', function($scope, $http) {
     $http.get('data/news_dummy.json').success(function(data) {
@@ -19,6 +22,7 @@ angular.module('app.controllers', [])
 })
 
 .controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
+	// deactivate swipe possibility (for sidebar)
 	$ionicSideMenuDelegate.canDragContent(false);
 
 	$scope.checkLogin = function(email, password) {
