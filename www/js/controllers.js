@@ -30,6 +30,9 @@ angular.module('app.controllers', [])
 			password === "frontendKey")
 		{
 
+			// Get visual error msg
+			$scope.hasWrongCredentials = false;
+
 			// Get local JSON
 			$http.get('data/login_dummy.json').success(function(data) {
 				$scope.login = data;
@@ -37,10 +40,10 @@ angular.module('app.controllers', [])
 			console.log("ok");
 
 			$location.path("/tabs/footer_news");
-		
+
 		}
 		else {
-			console.log("error");
+			$scope.hasWrongCredentials = true;
 		}
 	}
 
