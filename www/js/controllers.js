@@ -20,6 +20,7 @@ angular.module('app.controllers', [])
 
 .controller('loginCtrl', function($scope, $http, $location, UserDataService) {
 
+
 	$scope.checkLogin = function(email, password) {
 
 		console.log(email);
