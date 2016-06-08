@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Adventbasar",
+    "description": "Wieder veranstalten wir diese Jahr einen Adventbasar.",
+    "location": "Waldorfschule, Hagenberg",
+    "startTime": "2016-12-20T15:00:00",
+    "endTime": "2016-12-20T21:00:00"
+	 },
+	 {
+		 "id": 2,
+		 "name": "Sommer Grillerei",
+		 "description": "Wieder veranstalten wir diese Jahr eine Sommergrillerei.",
+		 "location": "Waldorfschule, Hagenberg",
+		 "startTime": "2016-06-20T12:00:00",
+		 "endTime": "2016-06-20T21:00:00"
+	 },
+	 {
+		 "id": 3,
+		 "name": "Fabians Wohltätigkeitsauktion",
+		 "description": "Umzugsbedingt verschenkt Fabian Dopler zu wohltätigem Zwecke diverse Kleidungsstücke.",
+		 "location": "Fabians Place, Linz",
+		 "startTime": "2016-04-20T12:00:00",
+		 "endTime": "2016-04-20T21:00:00"
+	 }
+]
