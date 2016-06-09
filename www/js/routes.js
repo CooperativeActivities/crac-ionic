@@ -92,8 +92,5 @@ angular.module('app.routes', [])
     controller: 'einstellungenCtrl'
   })
 
-$urlRouterProvider.otherwise('/login')
-
-
-
+	$urlRouterProvider.otherwise('/login')
 });

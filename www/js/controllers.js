@@ -209,18 +209,74 @@ angular.module('app.controllers', [])
 	// IF REST is used, just call the endpoint with the desired project-id
 	// In this demo-case, all dummy projects are searched for a matching id (url and json)
 
+	// Init active buttons
+	$scope.showAllTasks = true;
+
    $http.get('data/project_tasklist_dummy.json').success(function(data) {
 
-	   var projectId = $stateParams.projectId;
+	   var projectId = parseInt($stateParams.projectId);
 
 		// Search matching project id
 		for (var i = 0; i < data.length; i++) {
-			if(data[i].id = projectId) {
+			if(data[i].id === projectId) {
 				$scope.project = data[i];
+
+				// Customize startTime
+				var startTimeCustomized = $scope.project.startTime.substring(0, 10).split("-");
+				$scope.project.startTimeCustomized = startTimeCustomized[2] + "." + startTimeCustomized[1] + "." + startTimeCustomized[0];
+
+				// Add completed tasks to scope
+				getCompletedTasks();
+
 				return;
 			}
 		}
+
+		// Add completed tasks
    });
+
+	$scope.displayAllTasks = function() {
+
+		// Helper-Flags to determine which tasks should be shown
+		$scope.showAllTasks = true;
+		$scope.showCompletedTasks = false;
+		$scope.showAssignedTasks = false;
+	};
+
+	$scope.displayCompletedTasks = function() {
+
+		// Helper-Flags to determine which tasks should be shown
+		$scope.showAllTasks = false;
+		$scope.showCompletedTasks = true;
+		$scope.showAssignedTasks = false;
+	};
+
+	$scope.displayAssignedTasks = function() {
+
+		// Helper-Flags to determine which projects should be shown
+		$scope.showAllTasks = false;
+		$scope.showCompletedTasks = false;
+		$scope.showAssignedTasks = true;
+	};
+
+	var getCompletedTasks = function() {
+
+		// Returns all projects with a completed flag
+		var completedTasks = [];
+
+		for (var i = 0; i < $scope.project.childTasks.length; i++) {
+			if($scope.project.childTasks[i].isCompleted) {
+				completedTasks.push($scope.project.childTasks[i]);
+			}
+		}
+
+		if(completedTasks.length > 0) {
+			$scope.project.hasCompletedTasks = true;
+			$scope.project.completedTasks = completedTasks;
+		} else {
+			$scope.project.hasCompletedTasks = false;
+		}
+	};
 })
 
 .controller('gelSchteAufgabenCtrl', function($scope) {

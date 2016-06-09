@@ -9787,5 +9787,17 @@ a.button {
 .island {
   margin-top: 20px !important; }
 
+.islandBottom {
+  margin-bottom: 20px !important; }
+
 .islandHalf {
   margin-top: 10px !important; }
+
+.pull-left {
+  float: left; }
+
+.clearfix::after {
+  clear: both; }
+
+.margin-right {
+  margin-right: 10px !important; }

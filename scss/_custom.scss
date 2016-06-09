@@ -12,6 +12,24 @@ $gutter-width: 20px;
 	margin-top: $gutter-width !important;
 }
 
+.islandBottom {
+	margin-bottom: $gutter-width !important;
+}
+
 .islandHalf {
 	margin-top: $gutter-width / 2 !important;
+}
+
+.pull-left {
+	float: left;
+}
+
+.clearfix {
+	&::after {
+		clear: both;
+	}
+}
+
+.margin-right {
+	margin-right: $gutter-width / 2 !important;
 }

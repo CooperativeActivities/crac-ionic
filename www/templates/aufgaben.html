@@ -9,19 +9,19 @@
 
             <div class="item taskItem" ng-repeat="item in taskList | orderBy: 'startTime'">
 
-                <dic class="row">
+                <div class="row">
                     <div class="col">
                         <a href="#/{{item.id}}">
                             <h2>{{ item.name }}</h2>
                         </a>
                     </div>
-                </dic>
+                </div>
 
-                <dic class="row">
+                <div class="row">
                     <div class="col">
                         <h3>{{ item.description | limitTo:150 }}</h3>
                     </div>
-                </dic>
+                </div>
 
                 <div class="row">
                     <div class="col">
