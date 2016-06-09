@@ -9,5 +9,9 @@ $gutter-width: 20px;
 }
 
 .island {
-	margin-top: $gutter-width;
+	margin-top: $gutter-width !important;
+}
+
+.islandHalf {
+	margin-top: $gutter-width / 2 !important;
 }

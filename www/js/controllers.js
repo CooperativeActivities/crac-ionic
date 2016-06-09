@@ -106,6 +106,9 @@ angular.module('app.controllers', [])
 	// Additional further: CUrrently a task does NOT have a "fullfilled" state, so
 	// when this task is marked as complete --> also added in dummy json
 
+	// Init (show opened tasks)
+	$scope.showOpenProjects = true;
+
 	// Get local JSON
 	$http.get('data/organisation_projects.json').success(function(data) {
 
@@ -126,10 +129,63 @@ angular.module('app.controllers', [])
 				}
 			}
 
-			// Reassign
+			// Set a project-is-completed flag if all subtasks are completed
+			if(completedTaskCount === currentProject.maxTasks) {
+				currentProject.isCompleted = true;
+			} else {
+				currentProject.isCompleted = false;
+			}
+
+			// Assign count
 			currentProject.completedTasks = completedTaskCount;
 		 }
+
+		 // Add projects depending on their completed-status to the scope.
+		 // Maybe for Refactoring only these two arrays
+		 // instead of the projects-Array with all projects
+		 getOpenProjects();
+		 getCompletedProjects();
 	});
+
+	var getOpenProjects = function() {
+
+		// Returns all projects with no completed flag
+		var openProjects = [];
+
+		for (var i = 0; i < $scope.projects.length; i++) {
+			if(!$scope.projects[i].isCompleted) {
+				openProjects.push($scope.projects[i]);
+			}
+		}
+
+		$scope.openProjects = openProjects;
+	};
+
+	var getCompletedProjects = function() {
+
+		// Returns all projects with a completed flag
+		var completedProjects = [];
+
+		for (var i = 0; i < $scope.projects.length; i++) {
+			if($scope.projects[i].isCompleted) {
+				completedProjects.push($scope.projects[i]);
+			}
+		}
+
+		$scope.completedProjects = completedProjects;
+	};
+
+	$scope.displayCompletedProjects = function() {
+
+		// Helper-Flags to determine which projects should be shown
+		$scope.showCompletedProjects = true;
+		$scope.showOpenProjects = false;
+	};
+
+	$scope.displayOpenProjects = function() {
+		$scope.showCompletedProjects = false;
+		$scope.showOpenProjects = true;
+	};
 
 })
 
@@ -144,11 +200,14 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('projekteCtrl', function($scope, $http) {
+.controller('projektCtrl', function($scope, $http) {
 
-        $http.get('data/project_tasklist_dummy.json').success(function(data) {
-            $scope.projectList = data;
-        });
+	// Refactoring: changed from "projekteCtrl" to "projektCtrl"
+	// This Ctrl is only responsible to show the
+
+     $http.get('data/project_tasklist_dummy.json').success(function(data) {
+         $scope.projectList = data;
+     });
 })
 
 .controller('gelSchteAufgabenCtrl', function($scope) {

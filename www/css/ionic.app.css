@@ -9785,4 +9785,7 @@ a.button {
   padding-left: 20px; }
 
 .island {
-  margin-top: 20px; }
+  margin-top: 20px !important; }
+
+.islandHalf {
+  margin-top: 10px !important; }
