@@ -200,14 +200,27 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('projektCtrl', function($scope, $http) {
+.controller('projektCtrl', function($scope, $http, $stateParams) {
 
 	// Refactoring: changed from "projekteCtrl" to "projektCtrl"
-	// This Ctrl is only responsible to show the
+	// This Ctrl is only responsible to show the details of a project
+	// --> childtasks, metadata like date and location and so on
 
-     $http.get('data/project_tasklist_dummy.json').success(function(data) {
-         $scope.projectList = data;
-     });
+	// IF REST is used, just call the endpoint with the desired project-id
+	// In this demo-case, all dummy projects are searched for a matching id (url and json)
+
+   $http.get('data/project_tasklist_dummy.json').success(function(data) {
+
+	   var projectId = $stateParams.projectId;
+
+		// Search matching project id
+		for (var i = 0; i < data.length; i++) {
+			if(data[i].id = projectId) {
+				$scope.project = data[i];
+				return;
+			}
+		}
+   });
 })
 
 .controller('gelSchteAufgabenCtrl', function($scope) {
