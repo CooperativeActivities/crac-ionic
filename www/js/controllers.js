@@ -96,7 +96,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('organisationCtrl', function($scope) {
+.controller('organisationCtrl', function($scope, $http) {
 
 	// REST-Call: /projects
 	// Display ALL projects. In this domain we haven't modelled organizations, so every
@@ -108,7 +108,27 @@ angular.module('app.controllers', [])
 
 	// Get local JSON
 	$http.get('data/organisation_projects.json').success(function(data) {
+
 		 $scope.projects = data;
+
+		 // Go through childtasks PER PROJECT and get completed tasks
+		 for (var i = 0; i < $scope.projects.length; i++) {
+
+			var completedTaskCount = 0;
+			var currentProject = $scope.projects[i];
+			var currentChildTasks = currentProject.childTasks;
+			currentProject.maxTasks = currentChildTasks.length;
+
+			// Go through childtasks
+			for (var j = 0; j < currentChildTasks.length; j++) {
+				if(currentChildTasks[j].completed) {
+					completedTaskCount++;
+				}
+			}
+
+			// Reassign
+			currentProject.completedTasks = completedTaskCount;
+		 }
 	});
 
 })
