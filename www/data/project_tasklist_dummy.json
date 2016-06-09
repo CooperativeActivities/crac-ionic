@@ -6,6 +6,7 @@
     "location": "Waldorfschule, Hagenberg",
     "startTime": "2016-12-20T15:00:00",
     "endTime": "2016-12-20T21:00:00",
+    "imagePath": "img/adventbasar.jpg",
     "childTasks": [
       {
         "id": 1,
@@ -15,7 +16,8 @@
         "startTime": "2016-12-20T15:00:00",
         "endTime": "2016-12-20T21:00:00",
         "urgency": 4,
-        "amountOfVolunteers": 1
+        "amountOfVolunteers": 1,
+        "completed": false
       },
       {
         "id": 2,
@@ -25,7 +27,8 @@
         "startTime": "2016-12-20T15:00:00",
         "endTime": "2016-12-20T21:00:00",
         "urgency": 4,
-        "amountOfVolunteers": 2
+        "amountOfVolunteers": 2,
+        "completed": false
       },
       {
         "id": 3,
@@ -35,27 +38,96 @@
         "startTime": "2016-12-20T15:00:00",
         "endTime": "2016-12-20T21:00:00",
         "urgency": 4,
-        "amountOfVolunteers": 3
+        "amountOfVolunteers": 3,
+        "completed": false
       }
     ]
   },
   {
     "id": 2,
-    "name": "AnotherProject",
-    "description": "project 2",
+    "name": "Sommer Grillerei",
+    "description": "Wieder veranstalten wir diese Jahr eine Sommergrillerei.",
     "location": "Waldorfschule, Hagenberg",
-    "startTime": "2016-12-150T09:00:00",
-    "endTime": "2016-12-15T12:00:00",
+    "startTime": "2016-06-20T12:00:00",
+    "endTime": "2016-06-20T21:00:00",
+    "imagePath": "img/grillerei.jpg",
     "childTasks": [
       {
         "id": 1,
-        "name": "testTask",
-        "description": "test task desc",
+        "name": "Tische Organisieren",
+        "description": "Verkaufstische müssen organisiert werden",
         "location": "Waldorfschule, Hagenberg",
-        "startTime": "2016-12-15T09:00:00",
-        "endTime": "2016-12-15T12:00:00",
-        "urgency": 2,
-        "amountOfVolunteers": 1
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 1,
+        "completed": true
+      },
+      {
+        "id": 2,
+        "name": "Kassier",
+        "description": "Kassier wird benötigt",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 2,
+        "completed": true
+      },
+      {
+        "id": 3,
+        "name": "Betreuung",
+        "description": "Aufsichtspersonen werden gesucht!",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 3,
+        "completed": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Fabians Wohltätigkeitsauktion",
+    "description": "Umzugsbedingt verschenkt Fabian Dopler zu wohltätigem Zwecke diverse Kleidungsstücke.",
+    "location": "Fabians Place, Linz",
+    "startTime": "2016-04-20T12:00:00",
+    "endTime": "2016-04-20T21:00:00",
+    "imagePath": "img/kleider.jpg",
+    "childTasks": [
+      {
+        "id": 1,
+        "name": "Tische Organisieren",
+        "description": "Verkaufstische müssen organisiert werden",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 1,
+        "completed": false
+      },
+      {
+        "id": 2,
+        "name": "Kassier",
+        "description": "Kassier wird benötigt",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 2,
+        "completed": true
+      },
+      {
+        "id": 3,
+        "name": "Betreuung",
+        "description": "Aufsichtspersonen werden gesucht!",
+        "location": "Waldorfschule, Hagenberg",
+        "startTime": "2016-12-20T15:00:00",
+        "endTime": "2016-12-20T21:00:00",
+        "urgency": 4,
+        "amountOfVolunteers": 3,
+        "completed": true
       }
     ]
   }
