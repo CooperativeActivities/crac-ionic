@@ -2,11 +2,11 @@
     <ion-content padding="true" class="has-header">
 
 		 <div class="row">
- 			<div class="col col-25" style="
-				background: url('{{project.imagePath}}');
-				background-size: cover;
-				height: 100px;">
-		 	</div>
+		<div class="col col-25" ng-style="project.imagePath != '' && {
+			'background-image':'url('+project.imagePath+')',
+			'background-size': 'cover',
+			'height': '100px'}">
+		</div>
  			<div class="col padding-left">
  				<h2 ng-bind="project.name"></h2>
  				<p ng-bind="project.description"></p>

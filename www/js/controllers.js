@@ -231,8 +231,6 @@ angular.module('app.controllers', [])
 				return;
 			}
 		}
-
-		// Add completed tasks
    });
 
 	$scope.displayAllTasks = function() {
@@ -265,7 +263,7 @@ angular.module('app.controllers', [])
 		var completedTasks = [];
 
 		for (var i = 0; i < $scope.project.childTasks.length; i++) {
-			if($scope.project.childTasks[i].isCompleted) {
+			if($scope.project.childTasks[i].completed) {
 				completedTasks.push($scope.project.childTasks[i]);
 			}
 		}
