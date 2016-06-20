@@ -57,11 +57,11 @@
                 </div>
             </dic>
 
-             <div class="row">
+             <!--<div class="row">
                   <div class="col">
                         <h3 class="desc">{{ item.description | limitTo:150 }}</h3>
                   </div>
-             </div>
+             </div>-->
 
             <div class="row">
                 <div class="col">
@@ -78,11 +78,11 @@
 
             <div ng-show="!project.isAdmin">
                 <div class="button-bar island taskMenuButton">
-                    <a class="button button-stable">
+                    <a class="button button-assertive">
                         <span class="ion-minus-round icon" data-pack="default"></span>
                         <span class="menuText">Absagen</span>
                     </a>
-                    <a class="button button-stable ">
+                    <a class="button button-stable " href="#/task/detail/{{project.id}}/{{item.id}}">
                         <span class="ion-more icon" data-pack="default"></span>
                         <span class="menuText more">Mehr</span>
                     </a>
@@ -125,11 +125,11 @@
                 </div>
             </dic>
 
-            <div class="row">
+            <!--<div class="row">
                 <div class="col">
                     <h3 class="desc">{{ item.description | limitTo:150 }}</h3>
                 </div>
-            </div>
+            </div>-->
 
             <div class="row">
                 <div class="col">

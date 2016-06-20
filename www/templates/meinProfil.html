@@ -28,12 +28,12 @@
 					<a class="item item-icon-left item-icon-right" href="#">
 						<i class="icon ion-email"></i>
 						{{user.email}}
-						<i class="icon ion-edit smaller"></i>
+						<i class="icon ion-edit smaller positive"></i>
 					</a>
 					<a class="item item-icon-left item-icon-right" href="#">
 						<i class="icon ion-ios-telephone"></i>
 						{{user.phone}}
-						<i class="icon ion-edit smaller"></i>
+						<i class="icon ion-edit smaller positive"></i>
 					</a>
 				</div>
 
@@ -61,26 +61,63 @@
 
 				<p>
 					This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-					the content is from a card-body consisting of an image and paragraph text. The footer
+					the content is ssfrom a card-body consisting of an image and paragraph text. The footer
 					consists of tabs, icons aligned left, within the card-footer.
 				</p>
 				-->
+				<div class="item item-divider">
+					Kommunikationskanäle
+				</div>
+
+				<li class="item item-toggle">
+					Facebook
+					<label class="toggle toggle-balanced">
+						<input type="checkbox">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</li>
+
+				<li class="item item-toggle">
+					Email
+					<label class="toggle toggle-balanced">
+						<input type="checkbox">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</li>
+
+				<li class="item item-toggle">
+					SMS
+					<label class="toggle toggle-balanced">
+						<input type="checkbox">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</li>
+
+				<li class="item item-toggle">
+					Whatsapp
+					<label class="toggle toggle-balanced">
+						<input type="checkbox">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</li>
+
 
 				<div class="item item-divider">
 					Datenschutz
 				</div>
 
 				<div class="list" >
-					<a class="item" ui-sref="login">
-						<button class="button button-full button-assertive">
-							Account löschen
-						</button>
-					</a>
-					<a class="item" ui-sref="login">
-						<button class="button button-full button-energized">
-							Gespeicherte Daten anzeigen
-						</button>
-					</a>
+					<button ui-sref="login" class="button button-full button-assertive">
+						Account löschen
+					</button>
 				</div>
 
 		</div>
