@@ -1,25 +1,102 @@
 <ion-view title="Registrierung" id="page6">
     <ion-content padding="true" class="has-header">
-        <form class="list">
+        <form class="list" name="registerForm" novalidate="" ng-submit="register(authorizationForm)">
             <ion-list>
-                <label class="item item-input" name="firstname">
-                    <span class="input-label">Vorname</span>
-                    <input type="text" placeholder="">
-                </label>
-                <label class="item item-input" name="lastname">
-                    <span class="input-label">Nachname</span>
-                    <input type="text" placeholder="">
-                </label>
-                <label class="item item-input" name="email">
-                    <span class="input-label">Email</span>
-                    <input type="email" placeholder="">
-                </label>
-                <label class="item item-input" name="password">
-                    <span class="input-label">Passwort</span>
-                    <input type="password" placeholder="">
-                </label>
+
+					<label class="item item-input" ng-class="{
+							'has-errors' : registerForm.username.$invalid && registerForm.username.$dirty,
+							'no-errors' : registerForm.username.$valid && !registerForm.username.$untouched}">
+						<span class="input-label">Benutzername</span>
+						<input type="text" name="username" ng-minlength="5" ng-model="registerForm.user_name" required placeholder="Benutzername">
+					 </label>
+					 <div class="error-container" ng-show="registerForm.username.$invalid && registerForm.username.$dirty" ng-messages="registerForm.username.$error">
+						<div ng-messages-include="error-list.html"></div>
+					 </div>
+
+					 <label class="item item-input" ng-class="{
+							 'has-errors' : registerForm.firstname.$invalid && registerForm.firstname.$dirty,
+							 'no-errors' : registerForm.firstname.$valid && !registerForm.firstname.$untouched}">
+						 <span class="input-label">Vorname</span>
+						 <input type="text" name="firstname" ng-model="registerForm.first_name" required placeholder="Vorname">
+					  </label>
+					  <div class="error-container" ng-show="registerForm.firstname.$invalid && registerForm.firstname.$dirty" ng-messages="registerForm.firstname.$error">
+						 <div ng-messages-include="error-list.html"></div>
+					  </div>
+
+					  <label class="item item-input" ng-class="{
+							  'has-errors' : registerForm.lastname.$invalid && registerForm.lastname.$dirty,
+							  'no-errors' : registerForm.lastname.$valid && !registerForm.lastname.$untouched}">
+						  <span class="input-label">Nachname</span>
+						  <input type="text" name="lastname" ng-model="registerForm.last_name" required placeholder="Nachname">
+					   </label>
+						<div class="error-container" ng-show="registerForm.lastname.$invalid && registerForm.lastname.$dirty" ng-messages="registerForm.lastname.$error">
+						  <div ng-messages-include="error-list.html"></div>
+						</div>
+
+						<label class="item item-input" ng-class="{
+								'has-errors' : registerForm.email.$invalid && registerForm.email.$dirty,
+								'no-errors' : registerForm.email.$valid && !registerForm.email.$untouched}">
+							<span class="input-label">E-Mail</span>
+							<input type="email" name="email" ng-model="registerForm.e_mail" required placeholder="email@adresse.at">
+						 </label>
+						 <div class="error-container" ng-show="registerForm.email.$invalid && registerForm.email.$dirty" ng-messages="registerForm.email.$error">
+	 	                <div ng-messages-include="error-list.html"></div>
+	 	              </div>
+
+						 <label class="item item-input" ng-class="{
+								 'has-errors' : registerForm.password1.$invalid && registerForm.password1.$dirty,
+								 'no-errors' : registerForm.password1.$valid && !registerForm.password1.$untouched}">
+							 <span class="input-label">Passwort</span>
+							 <input type="password" name="password1" ng-model="registerForm.password_1" required>
+						  </label>
+						  <div class="error-container" ng-show="registerForm.password1.$invalid && registerForm.password1.$dirty" ng-messages="registerForm.password1.$error">
+							  <div ng-messages-include="error-list.html"></div>
+						   </div>
+
+						  <label class="item item-input" ng-class="{
+								  'has-errors' : registerForm.password2.$invalid && registerForm.password2.$dirty,
+								  'no-errors' : registerForm.password2.$valid && !registerForm.password2.$untouched}">
+							  <span class="input-label">Passwort wiederholen</span>
+							  <input type="password" name="password2" ng-model="registerForm.password_2" required compare-to="registerForm.password_1">
+						   </label>
+							<div class="error-container" ng-show="registerForm.password2.$invalid && registerForm.password2.$dirty" ng-messages="registerForm.password2.$error">
+								<div ng-messages-include="error-list.html"></div>
+							 </div>
             </ion-list>
-            <a ui-sref="tabsController.neuigkeiten" id="registrierung-button3" class="button button-stable  button-block">Registrieren</a>
+
+				<div class="spacer" style="height: 40px;"></div>
+            <input type="submit" id="login-button1" class="button button-stable button-block" ng-click="checkRegister()" value="Registrieren" ng-disabled="registerForm.$invalid" />
         </form>
     </ion-content>
 </ion-view>
+
+<script id="error-list.html" type="text/ng-template">
+  <div class="error" ng-message="required">
+	 <i class="ion-information-circled"></i>
+	 Pflichtfeld!
+  </div>
+  <div class="error" ng-message="username">
+  <i class="ion-information-circled"></i>
+  Bitte einen gültigen Username eintragen!
+  </div>
+  <div class="error" ng-message="firstname">
+  <i class="ion-information-circled"></i>
+  Bitte einen gültigen Vornamen eintragen!
+  </div>
+  <div class="error" ng-message="lastname">
+  <i class="ion-information-circled"></i>
+  Bitte einen gültigen Nachnamen eintragen!
+  </div>
+  <div class="error" ng-message="email">
+  <i class="ion-information-circled"></i>
+  Bitte eine gültige E-Mail eintragen!
+  </div>
+  <div class="error" ng-message="minlength">
+	 <i class="ion-information-circled"></i>
+	 Bitte mindestens 5 Zeichen angeben!
+  </div>
+  <div class="error" ng-message="maxlength">
+	 <i class="ion-information-circled"></i>
+	 Maximum length of this field is 20 characters!
+  </div>
+</script>

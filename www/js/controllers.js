@@ -206,8 +206,14 @@ angular.module('app.controllers', [])
 	}
 })
 
-.controller('registrierungCtrl', function($scope) {
+.controller('registrierungCtrl', function($scope, $location) {
+	$scope.checkRegister = function() {
 
+		console.log("checkRegister Form");
+		
+		// Switch to desired location
+		$location.path("/tabs/footer_news");
+	}
 })
 
 .controller('organisationCtrl', function($scope, $http) {
