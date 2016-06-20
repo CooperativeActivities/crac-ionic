@@ -1,0 +1,65 @@
+<ion-view title="Neue Aufgabe" id="page13">
+    <ion-content padding="true" class="has-header">
+
+        <div class="list list-inset">
+            <div class="item item-divider desc">
+                Neue Aufgabe für  {{ project.name }}
+            </div>
+
+            <div class="item newTask">
+                <dic class="row">
+                    <div class="col desc">
+                        {{ project.description }}
+                    </div>
+                </dic>
+
+                <div class="row">
+                    <div class="col">
+                        <span class="ion-calendar" data-pack="default"></span>
+                        {{ project.startTime | date:'dd. MMM'}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="ion-ios-location" data-pack="default"></span>
+                        {{ project.location }}
+                    </div>
+                </div>
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="Titel der Aufgabe">
+                </label>
+                <label class="item item-input">
+                    <textarea placeholder="Beschreibung"></textarea>
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Ort">
+                </label>
+
+                <div class="row no-padding">
+                    <div class="col col-60 no-padding">
+                        <label class="item item-input">
+                            <input type="date" value="{{curDateTime | date: 'yyyy-MM-dd'}}">
+                        </label>
+                    </div>
+                    <div class="col col-35 no-padding">
+                        <label class="item item-input">
+                            <input type="time" value="{{curDateTime | date: 'HH:mm'}}">
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="button-bar island newTaskButton">
+                    <a class="button button-stable" href="#/{{project.id}}/neueAufgabe">
+                        <span class="ion-plus-round icon" data-pack="default"></span>
+                        <span class="menuText"> Aufgabe erstellen</span>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

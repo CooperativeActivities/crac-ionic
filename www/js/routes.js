@@ -62,6 +62,12 @@ angular.module('app.routes', [])
     controller: 'registrierungCtrl'
   })
 
+  .state('neueAufgabe', {
+      url: '/:projectId/neueAufgabe',
+      templateUrl: 'templates/neueAufgabe.html',
+      controller: 'neueAufgabeCtrl'
+  })
+
   .state('organisation', {
     url: '/sidemenu_organisation',
     templateUrl: 'templates/organisation.html',
