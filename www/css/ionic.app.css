@@ -9786,3 +9786,27 @@ a.button {
 
 .island {
   margin-top: 20px; }
+
+img.responsive {
+  width: 100%;
+  min-width: 25%;
+  max-width: 100%; }
+
+a.taskHeadlineLink {
+  text-decoration: none; }
+
+h2.taskHeadline {
+  font-size: 22px;
+  line-height: 35px; }
+
+.taskMenuButton {
+  margin-bottom: 5px; }
+  .taskMenuButton span {
+    display: block; }
+    .taskMenuButton span.icon {
+      height: 16px; }
+    .taskMenuButton span.icon:before {
+      font-size: 20px !important;
+      line-height: 30px !important; }
+    .taskMenuButton span.menuText {
+      height: 40px; }
