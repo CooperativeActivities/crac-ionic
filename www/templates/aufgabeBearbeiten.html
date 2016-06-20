@@ -1,25 +1,34 @@
-<ion-view title="Neue Aufgabe" id="page13">
+<ion-view title="Aufgabe bearbeiten" id="page13">
     <ion-content padding="true" class="has-header">
 
         <div class="list list-inset">
             <div class="item item-divider desc">
-                Aufgabe bearbeiten: {{ task.name }}
+                Aufgabe {{ task.name }} bearbeiten
             </div>
 
 
             <div class="list">
+                <div class="item item-divider desc">
+                    Titel
+                </div>
                 <label class="item item-input">
                     <input type="text" placeholder="Titel der Aufgabe" value="{{task.name}}">
                 </label>
+                <div class="item item-divider desc">
+                    Beschreibung
+                </div>
                 <label class="item item-input">
                     <textarea placeholder="Beschreibung">{{task.description}}</textarea>
                 </label>
+                <div class="item item-divider desc">
+                    Ort
+                </div>
                 <label class="item item-input">
                     <input type="text" placeholder="Ort" value="{{task.location}}">
                 </label>
 
                 <div class="item item-divider desc">
-                    Startzeit
+                    Begin
                 </div>
                 <div class="row no-padding">
 
@@ -36,7 +45,7 @@
                 </div>
 
                 <div class="item item-divider desc">
-                    Endzeit
+                    Ende
                 </div>
                 <div class="row no-padding">
 
@@ -51,6 +60,13 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="item item-divider desc">
+                    Anzahl der Teilnehmer
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Anzahl der Teilnehmer" value="{{task.amountOfVolunteers}}">
+                </label>
 
 
                 <div class="button-bar island newTaskButton">
