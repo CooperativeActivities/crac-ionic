@@ -27,8 +27,7 @@
 					url: baseURL + 'user/login'
 			   };
 
-				// When I add a custom header the server tells me to fuck off
-				/*
+				// When I add a custom header the server tells me to go
 			  var req = {
 				   method: 'GET',
 				   url: baseURL + 'user/login',
@@ -36,7 +35,6 @@
 				     'Authorization': 'Basic ' + authdata
 				   }
 				};
-				*/
 
 				$http(req).success(function (response, status, headers) {
 
