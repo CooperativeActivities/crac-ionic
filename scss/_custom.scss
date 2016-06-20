@@ -33,3 +33,41 @@ $gutter-width: 20px;
 .margin-right {
 	margin-right: $gutter-width / 2 !important;
 }
+
+img.responsive {
+  width: 100%;
+  min-width: 25%;
+  max-width: 100%;
+}
+
+
+a.taskHeadlineLink {
+  text-decoration: none;
+}
+
+h2.taskHeadline {
+  font-size: 22px;
+  line-height: 35px;
+}
+
+.taskMenuButton
+{
+  margin-bottom: 5px;
+
+  span {
+    display: block;
+    
+    &.icon {
+      height: 16px;
+    }
+    &.icon:before {
+      font-size: 20px !important;
+      line-height: 30px !important;
+    }
+    
+    &.menuText {
+      height: 40px;
+    }
+  }
+  
+}
