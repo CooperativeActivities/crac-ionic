@@ -1,0 +1,152 @@
+<ion-view title="{{project.name}}" id="page10">
+    <ion-content padding="true" class="has-header">
+
+		 <div class="row">
+		<div class="col col-25" ng-style="project.imagePath != '' && {
+			'background-image':'url('+project.imagePath+')',
+			'background-size': 'cover',
+			'height': '100px'}">
+		</div>
+ 			<div class="col padding-left">
+ 				<h2 ng-bind="project.name"></h2>
+ 				<p ng-bind="project.description"></p>
+				<p>
+					<span ng-bind="project.startTimeCustomized"></span><span>, </span>
+					<span ng-bind="project.location"></span>
+				</p>
+				<div>
+					<i class="icon ion-plus-circled h3 pull-left block margin-right" style="margin-top: -4px;"></i>
+					<p class="clearfix">  neue Aufgabe</p>
+				</div>
+ 			</div>
+ 		</div>
+
+		<div class="button-bar islandBottom">
+			<a class="button button-stable button-outline"
+				ng-click="displayAllTasks()"
+				ng-class="{'active' : showAllTasks}">alle Aufgaben</a>
+			<a class="button button-stable button-outline"
+				ng-click="displayCompletedTasks()"
+				ng-class="{'active' : showCompletedTasks}">abgeschl. Aufgaben</a>
+			<a class="button button-stable button-outline"
+				ng-click="displayAssignedTasks()"
+				ng-class="{'active' : showAssignedTasks}">verg. Aufgaben</a>
+		</div>
+
+		<!-- all tasks -->
+		<div class="item taskItem"
+			ng-repeat="item in project.childTasks | orderBy: 'startTime'"
+			ng-show="showAllTasks">
+
+			 <div class="row">
+				  <div class="col">
+						<a href="#/{{item.id}}">
+							 <h2>{{ item.name }}</h2>
+						</a>
+				  </div>
+			 </div>
+
+			 <div class="row">
+				  <div class="col">
+						<h3>{{ item.description | limitTo:150 }}</h3>
+				  </div>
+			 </div>
+
+			 <div class="row">
+				  <div class="col">
+						<span class="ion-calendar" data-pack="default"></span>
+						{{ item.startTime | date:'dd. MMM'}}
+				  </div>
+				  <div class="col">
+						<span class="ion-ios-location" data-pack="default"></span>
+						{{ item.location }}
+				  </div>
+			 </div>
+
+			 <div class="row">
+				  <div class="col text-center">
+						<a href="#">
+							 <div class="ion-minus-round" data-pack="default" data-tags="complete, finished, success, on"></div>
+							 <div>Absagen</div>
+						</a>
+				  </div>
+				  <div class="col text-center">
+						<a href="#" >
+							 <div class="ion-ios-star-outline" data-pack="default" data-tags="complete, finished, success, on"></div>
+							 <div>Nicht mehr folgen</div>
+						</a>
+				  </div>
+				  <div class="col text-center">
+						<a href="#">
+							 <div class="ion-more" data-pack="default" data-tags="complete, finished, success, on"></div>
+							 <div>Mehr Info</div>
+						</a>
+				  </div>
+			 </div>
+		</div>
+
+		<!-- completed Tasks -->
+		<div class="item taskItem"
+			ng-repeat="item in project.completedTasks | orderBy: 'startTime'"
+			ng-show="showCompletedTasks && project.hasCompletedTasks">
+
+			<div class="row">
+				 <div class="col">
+					  <a href="#/{{item.id}}">
+							<h2>{{ item.name }}</h2>
+					  </a>
+				 </div>
+			</div>
+
+			<div class="row">
+				 <div class="col">
+					  <h3>{{ item.description | limitTo:150 }}</h3>
+				 </div>
+			</div>
+
+			<div class="row">
+				 <div class="col">
+					  <span class="ion-calendar" data-pack="default"></span>
+					  {{ item.startTime | date:'dd. MMM'}}
+				 </div>
+				 <div class="col">
+					  <span class="ion-ios-location" data-pack="default"></span>
+					  {{ item.location }}
+				 </div>
+			</div>
+
+			<div class="row">
+				 <div class="col text-center">
+					  <a href="#">
+							<div class="ion-minus-round" data-pack="default" data-tags="complete, finished, success, on"></div>
+							<div>Absagen</div>
+					  </a>
+				 </div>
+				 <div class="col text-center">
+					  <a href="#" >
+							<div class="ion-ios-star-outline" data-pack="default" data-tags="complete, finished, success, on"></div>
+							<div>Nicht mehr folgen</div>
+					  </a>
+				 </div>
+				 <div class="col text-center">
+					  <a href="#">
+							<div class="ion-more" data-pack="default" data-tags="complete, finished, success, on"></div>
+							<div>Mehr Info</div>
+					  </a>
+				 </div>
+			</div>
+		</div>
+
+		<!-- completed Tasks, but no results -->
+		<div class="item taskItem" ng-show="showCompletedTasks && !project.hasCompletedTasks">
+			<h2>Keine abgeschlossenen tasks =(</h2>
+		</div>
+
+		<!-- assigned tasks -->
+		<div class="item taskItem" ng-show="showAssignedTasks">
+			<h2>Fix da backend, ho</h2>
+		</div>
+
+
+    </ion-content>
+</ion-view>
