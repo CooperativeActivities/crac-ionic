@@ -64,6 +64,7 @@ angular.module('app.controllers', [])
             for (var i = 0; i < data.length; i++) {
                 if(data[i].id === projectId) {
                     $scope.project = data[i];
+                    console.log($scope);
                     return;
                 }
             }
@@ -72,6 +73,38 @@ angular.module('app.controllers', [])
         $scope.curDateTime = new Date();
 
 })
+
+.controller('aufgabeBearbeitenCtrl', function($scope, $http, $stateParams) {
+
+    $http.get('data/project_tasklist_dummy.json').success(function(data) {
+
+        var projectId = parseInt($stateParams.projectId);
+        var taskId = parseInt($stateParams.taskId);
+
+        // Search matching project id
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].id === projectId) {
+                var curProjectTasks = data[i].childTasks;
+
+                for(var j=0; j < curProjectTasks.length; j++)
+                {
+                    if(curProjectTasks[j].id === taskId)
+                    {
+                        $scope.task = curProjectTasks[j];
+                    }
+                }
+                console.log($scope);
+                return;
+            }
+        }
+    });
+
+    $scope.curDateTime = new Date();
+
+})
+
+
+
 
 .controller('loginCtrl', function($scope, $http, $location, UserDataService, AuthenticationService, $ionicSideMenuDelegate) {
 
@@ -269,7 +302,7 @@ angular.module('app.controllers', [])
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].id === projectId) {
 				$scope.project = data[i];
-
+                $scope.project.isAdmin = true;
 				// Customize startTime
 				var startTimeCustomized = $scope.project.startTime.substring(0, 10).split("-");
 				$scope.project.startTimeCustomized = startTimeCustomized[2] + "." + startTimeCustomized[1] + "." + startTimeCustomized[0];
@@ -277,9 +310,11 @@ angular.module('app.controllers', [])
 				// Add completed tasks to scope
 				getCompletedTasks();
 
+                console.log($scope);
 				return;
 			}
 		}
+
    });
 
 	$scope.displayAllTasks = function() {

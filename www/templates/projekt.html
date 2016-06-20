@@ -7,7 +7,7 @@
                 'background-size': 'cover',
                 'height': '100px'}">
             </div>
- 			<div class="col padding-left padding-right-80">
+ 			<div class="col padding-left">
  				<h2 ng-bind="project.name"></h2>
  				<p ng-bind="project.description" class="desc"></p>
 
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="button-bar newTaskButton">
-                    <a class="button button-stable" href="#/{{project.id}}/neueAufgabe">
+                    <a class="button button-balanced" href="#/{{project.id}}/neueAufgabe">
                         <span class="ion-plus-round icon" data-pack="default"></span>
                         <span class="menuText"> Neue Aufgabe</span>
                     </a>
@@ -76,24 +76,40 @@
                 </div>
             </div>
 
-            <div class="button-bar island taskMenuButton">
-                <a class="button button-stable">
-                    <span class="ion-minus-round icon" data-pack="default"></span>
-                    <span class="menuText">Absagen</span>
-                </a>
-                <a class="button button-stable ">
-                    <span class="ion-more icon" data-pack="default"></span>
-                    <span class="menuText more">Mehr</span>
-                </a>
+            <div ng-show="!project.isAdmin">
+                <div class="button-bar island taskMenuButton">
+                    <a class="button button-stable">
+                        <span class="ion-minus-round icon" data-pack="default"></span>
+                        <span class="menuText">Absagen</span>
+                    </a>
+                    <a class="button button-stable ">
+                        <span class="ion-more icon" data-pack="default"></span>
+                        <span class="menuText more">Mehr</span>
+                    </a>
+                </div>
+
+                <div class="button-bar taskMenuButton">
+                    <a class="button button-stable">
+                        <span class="ion-ios-star-outline icon" data-pack="default"></span>
+                        <span class="menuText">Nicht mehr folgen</span>
+                    </a>
+                </div>
             </div>
 
-            <div class="button-bar taskMenuButton">
-                <a class="button button-stable">
-                    <span class="ion-ios-star-outline icon" data-pack="default"></span>
-                    <span class="menuText">Nicht mehr folgen</span>
-                </a>
-            </div>
 
+            <div ng-show="project.isAdmin">
+                <div class="button-bar island taskMenuButton">
+                    <a class="button button-stable" href="#/task/edit/{{project.id}}/{{item.id}}">
+                        <span class="ion-more icon" data-pack="default"></span>
+                        <span class="menuText more">Bearbeiten</span>
+                    </a>
+                    <a class="button button-assertive">
+                        <span class="ion-minus-round icon" data-pack="default"></span>
+                        <span class="menuText">Löschen</span>
+                    </a>
+                </div>
+
+            </div>
 		</div>
 
 		<!-- completed Tasks -->

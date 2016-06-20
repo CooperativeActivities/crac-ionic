@@ -68,6 +68,13 @@ angular.module('app.routes', [])
       controller: 'neueAufgabeCtrl'
   })
 
+  .state('aufgabeBearbeiten', {
+      url: '/task/edit/:projectId/:taskId',
+      templateUrl: 'templates/aufgabeBearbeiten.html',
+      controller: 'aufgabeBearbeitenCtrl'
+  })
+
+
   .state('organisation', {
     url: '/sidemenu_organisation',
     templateUrl: 'templates/organisation.html',
