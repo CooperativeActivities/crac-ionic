@@ -18,7 +18,7 @@
 
                 <dic class="row">
                     <div class="col">
-                        <h3>{{ item.description | limitTo:150}}</h3>
+                        <h3 class="desc">{{ item.description | limitTo:150}}</h3>
                     </div>
                 </dic>
 
@@ -27,6 +27,8 @@
                         <span class="ion-calendar" data-pack="default"></span>
                         {{ item.startTime | date:'dd. MMM'}}
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <span class="ion-ios-location" data-pack="default"></span>
                         {{ item.location }}
@@ -45,7 +47,7 @@
                     </a>
                     <a class="button button-stable ">
                         <span class="ion-more icon" data-pack="default"></span>
-                        <span class="menuText">Mehr Info</span>
+                        <span class="menuText more">Mehr</span>
                     </a>
                 </div>
             </div>

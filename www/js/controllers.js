@@ -51,6 +51,28 @@ angular.module('app.controllers', [])
     });
 })
 
+.controller('neueAufgabeCtrl', function($scope, $http, $stateParams) {
+        var projectId = parseInt($stateParams.projectId)
+
+
+
+        $http.get('data/project_tasklist_dummy.json').success(function(data) {
+
+            var projectId = parseInt($stateParams.projectId);
+
+            // Search matching project id
+            for (var i = 0; i < data.length; i++) {
+                if(data[i].id === projectId) {
+                    $scope.project = data[i];
+                    return;
+                }
+            }
+        });
+
+        $scope.curDateTime = new Date();
+
+})
+
 .controller('loginCtrl', function($scope, $http, $location, UserDataService, AuthenticationService, $ionicSideMenuDelegate) {
 
 	// deactivate swipe possibility (for sidebar)
