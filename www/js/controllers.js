@@ -11,6 +11,7 @@ angular.module('app.controllers', [])
 .controller('neuigkeitenCtrl', function($scope, $http) {
 
     //SHOW ALL NEW TASKS FROM ORGANISATION
+
     $http.get('data/project_tasklist_dummy.json').success(function(data) {
         var newsList = [];
         angular.forEach(data, function(item){
@@ -72,13 +73,51 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('loginCtrl', function($scope, $http, $location, UserDataService, $ionicSideMenuDelegate) {
+.controller('loginCtrl', function($scope, $http, $location, UserDataService, AuthenticationService, $ionicSideMenuDelegate) {
 
 	// deactivate swipe possibility (for sidebar)
 	$ionicSideMenuDelegate.canDragContent(false);
 
-	$scope.checkLogin = function(email, password) {
+	$scope.checkLogin = function(username, password) {
 
+		// Get the user from a authentication service before (basic auth)
+		/*
+		UserDataService.getUserLogin().then(
+			function($res){
+				console.log($res.data);
+			},
+			function($error){
+				console.log($error);
+			}
+		);
+		*/
+
+			AuthenticationService.Login(username, password, function (response) {
+             if (response.success) {
+
+                //AuthenticationService.SetCredentials($scope.username, $scope.password);
+
+ 					 // Set variables according if shop user or admin
+ 					 setUserData();
+
+                 $scope.loggedIn = true;
+ 					 $scope.loginError = undefined;
+
+ 					 $scope.isAdmin ? $location.path('/admin/books') : $location.path('/books');
+
+                $window.location.reload();
+             } else {
+ 					var msg = response.message;
+
+ 					$scope.loginError = msg;
+                $scope.dataLoading = false;
+                $scope.loggedIn = false;
+
+ 					$location.path("/books");
+             }
+         });
+
+/*
 		// Check if demo-user (frontend@test.at; frontendKey)
 		if(email === "frontend@test.at" &&
 			password === "frontendKey")
@@ -98,19 +137,8 @@ angular.module('app.controllers', [])
 		else {
 			$scope.hasWrongCredentials = true;
 		}
+		*/
 	}
-
-	// Get the user from a authentication service before (basic auth)
-	/*
-	UserDataService.getUserById(2).then(
-		function($res){
-			console.log($res.data);
-		},
-		function($error){
-			console.log($error);
-		}
-	);
-	*/
 })
 
 .controller('registrierungCtrl', function($scope) {
