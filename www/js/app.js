@@ -5,21 +5,17 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', [
+var cracApp = angular.module('app', [
 	'ionic',
 	'ngMessages',
+	'ngCookies',
 	'app.controllers',
 	'app.routes',
 	'app.services',
 	'app.directives'
+]);
 
-	// Use this part for login with Server
-	//	'app.directives',
-	//    'lib/authentication.service',
-	//    'lib/flash.service'
- ])
-
-.run(function($ionicPlatform) {
+cracApp.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -33,3 +29,33 @@ angular.module('app', [
     }
   });
 })
+
+// Interceptor Service
+.factory("HttpErrorInterceptorService", ["$q", "$rootScope", "$location","FlashService",
+   function($q, $rootScope, $location,FlashService) {
+       var success = function(response) {
+               // pass through
+               return response;
+           },
+           error = function(response) {
+               if(response.status === 401) {
+                   FlashService.Error(response.data.message);
+               }
+
+               return $q.reject(response);
+           };
+
+       return function(httpPromise) {
+           return httpPromise.then(success, error);
+       };
+   }
+])
+
+.config(["$httpProvider",
+   function($httpProvider) {
+
+		 // Older Angular Version
+       //$httpProvider.responseInterceptors.push("HttpErrorInterceptorService");
+       $httpProvider.interceptors.push("HttpErrorInterceptorService");
+   }
+]);

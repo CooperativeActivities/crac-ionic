@@ -14,13 +14,13 @@
 					</div>
 
 					 <label class="item item-input" ng-class="{
-						 	 'has-errors' : authorizationForm.email.$invalid && authorizationForm.email.$dirty,
-							 'no-errors' : authorizationForm.email.$valid && !authorizationForm.email.$untouched && !hasWrongCredentials}">
-	                <span class="input-label">Email</span>
-	                <input type="email" name="email" ng-model="authorization.email" required placeholder="frontent@test.at / frontendKey">
+						 	 'has-errors' : authorizationForm.username.$invalid && authorizationForm.username.$dirty,
+							 'no-errors' : authorizationForm.username.$valid && !authorizationForm.username.$untouched && !hasWrongCredentials}">
+	                <span class="input-label">Benutzer</span>
+	                <input type="text" name="username" ng-model="authorization.username" required placeholder="frontent / frontendKey">
 	              </label>
 
-	              <div class="error-container" ng-show="authorizationForm.email.$invalid && authorizationForm.email.$dirty" ng-messages="authorizationForm.email.$error">
+	              <div class="error-container" ng-show="authorizationForm.username.$invalid && authorizationForm.username.$dirty" ng-messages="authorizationForm.username.$error">
 	                <div ng-messages-include="error-list.html"></div>
 	              </div>
 
@@ -38,7 +38,7 @@
             </ion-list>
 
             <div class="spacer" style="height: 40px;"></div>
-            <input type="submit" id="login-button1" class="button button-stable button-block" ng-click="checkLogin(authorization.email, authorization.password)" value="Einloggen" ng-disabled="authorizationForm.$invalid" />
+            <input type="submit" id="login-button1" class="button button-stable button-block" ng-click="checkLogin(authorization.username, authorization.password)" value="Einloggen" ng-disabled="authorizationForm.$invalid" />
             <a ui-sref="registrierung" id="login-button2" class="button button-positive  button-block button-clear">Neuen Account anlegen</a>
             <a ui-sref="entdeckungsreise" id="login-button6" class="button button-positive  button-block button-clear">Entdeckungsreise</a>
         </form>
@@ -50,9 +50,9 @@
 	 <i class="ion-information-circled"></i>
 	 Pflichtfeld!
   </div>
-  <div class="error" ng-message="email">
+  <div class="error" ng-message="username">
   <i class="ion-information-circled"></i>
-  Bitte eine gültige EMail eintragen!
+  Bitte einen gültigen Username eintragen!
   </div>
   <div class="error" ng-message="minlength">
 	 <i class="ion-information-circled"></i>

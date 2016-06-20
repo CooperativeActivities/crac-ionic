@@ -1,16 +1,13 @@
 (function () {
     'use strict';
 
-    // var baseUrl = "http://schoenboeck.kwmhgb.at/bookstore/server/bsServer"
+    cracApp.factory('AuthenticationService', AuthenticationService);
 
+    var baseURL = "https://core.crac.at/crac-core/";
 
-    app.factory('AuthenticationService', AuthenticationService);
+    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout'];
+    function AuthenticationService($http, $cookieStore, $rootScope, $timeout) {
 
-    srv._baseURL = "https://core.crac.at/crac-core/";
-
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout','CONFIG'];
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, CONFIG) {
-       // var baseUrl = CONFIG.serverURL;
         var service = {};
 
         service.Login = Login;
@@ -21,20 +18,18 @@
         return service;
 
         function Login(username, password, callback) {
-           /* var response;
-            if (username=="admin" && password === '1234') {
-                console.log("Login korrekt!");
-                response = { success: true };
-            } else {
-                response = { success: false, message: 'Username or password is incorrect' };
-            }
-            callback(response);*/
 
-            /* Use this for real authentication
-             ----------------------------------------------*/
+			  var authdata = Base64.encode(username + ':' + password);
 
-            $http.post(baseUrl+'/user/login.json', { username: username, password: password })
+            $http.get(baseURL+'user/login', {
+					'Authorization': 'Basic ' + authdata,
+                	'Accept': 'application/json; charset=utf-8',
+                	'Content-Type': 'application/json; charset=utf-8'
+				})
                 .success(function (response, status, headers) {
+
+						 console.log("Success");
+						 console.log(response);
 
                     if(response.user != null){
 
@@ -52,6 +47,7 @@
                     }
                     callback(response);
                 }).error(function (e) {
+						 console.log("error!" + e);
             });
         }
 
