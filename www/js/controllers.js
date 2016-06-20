@@ -16,6 +16,7 @@ angular.module('app.controllers', [])
         var newsList = [];
         angular.forEach(data, function(item){
             angular.forEach(item.childTasks, function(item){
+                item.projectId = item.id;
                 newsList.push(item);
             })
         })
@@ -43,11 +44,13 @@ angular.module('app.controllers', [])
         var taskList = [];
         angular.forEach(data, function(item){
             angular.forEach(item.childTasks, function(item){
+                item.projectId = item.id;
                 taskList.push(item);
             })
         })
 
         $scope.taskList = taskList;
+        console.log($scope);
     });
 })
 
@@ -75,6 +78,35 @@ angular.module('app.controllers', [])
 })
 
 .controller('aufgabeBearbeitenCtrl', function($scope, $http, $stateParams) {
+
+    $http.get('data/project_tasklist_dummy.json').success(function(data) {
+
+        var projectId = parseInt($stateParams.projectId);
+        var taskId = parseInt($stateParams.taskId);
+
+        // Search matching project id
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].id === projectId) {
+                var curProjectTasks = data[i].childTasks;
+
+                for(var j=0; j < curProjectTasks.length; j++)
+                {
+                    if(curProjectTasks[j].id === taskId)
+                    {
+                        $scope.task = curProjectTasks[j];
+                    }
+                }
+                console.log($scope);
+                return;
+            }
+        }
+    });
+
+    $scope.curDateTime = new Date();
+
+})
+
+.controller('aufgabeDetailCtrl', function($scope, $http, $stateParams) {
 
     $http.get('data/project_tasklist_dummy.json').success(function(data) {
 

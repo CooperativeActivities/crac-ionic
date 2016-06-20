@@ -1,57 +1,59 @@
-<ion-view title="Neuigkeiten" id="page2">
+<ion-view title="Aufgaben Details" id="page13">
     <ion-content padding="true" class="has-header">
 
         <div class="list list-inset">
-            <div class="item item-divider">
-                Adventbasar - Neue Aufgaben
-            </div>
-
-            <div class="item newsItem" ng-repeat="item in newsList | orderBy: 'startTime'">
+            <div class="item taskItem">
 
                 <dic class="row">
                     <div class="col">
-                        <a href="#/{{item.id}}" class="taskHeadlineLink">
-                            <h2 class="taskHeadline">{{ item.name }}</h2>
+                        <a href="#" class="taskHeadlineLink">
+                            <h2 class="taskHeadline">{{ task.name }}</h2>
                         </a>
                     </div>
                 </dic>
 
-                <!--<dic class="row">
-                    <div class="col">
-                        <h3 class="desc">{{ item.description | limitTo:150}}</h3>
-                    </div>
-                </dic>-->
+
+                <div class="row">
+                     <div class="col">
+                           <p class="desc">{{ task.description }}</p>
+                     </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col">
                         <span class="ion-calendar" data-pack="default"></span>
-                        {{ item.startTime | date:'dd. MMM'}}
+                        Beginn - {{ task.startTime | date:'dd. MMM'}} - {{ task.startTime | date:'HH:mm'}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="ion-calendar" data-pack="default"></span>
+                        Ende - {{ task.endTime | date:'dd. MMM'}} - {{ task.startTime | date:'HH:mm'}}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <span class="ion-ios-location" data-pack="default"></span>
-                        {{ item.location }}
+                        {{ task.location }}
                     </div>
                 </div>
-
 
                 <div class="button-bar island taskMenuButton">
                     <a class="button button-balanced">
                         <span class="ion-checkmark icon" data-pack="default"></span>
                         <span class="menuText">Zusagen</span>
                     </a>
+                    <a class="button button-stable ">
+                        <span class="ion-person-stalker icon" data-pack="default"></span>
+                        <span class="menuText more">2/6</span>
+                    </a>
                     <a class="button button-stable">
                         <span class="ion-star icon" data-pack="default"></span>
                         <span class="menuText">Folgen</span>
                     </a>
-                    <a class="button button-stable" href="#/task/detail/{{item.projectId}}/{{item.id}}">
-                        <span class="ion-more icon" data-pack="default"></span>
-                        <span class="menuText more">Mehr</span>
-                    </a>
                 </div>
             </div>
         </div>
-
     </ion-content>
 </ion-view>
