@@ -7,7 +7,7 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
+
   .state('tabsController.neuigkeiten', {
     url: '/footer_news',
     views: {
@@ -74,10 +74,10 @@ angular.module('app.routes', [])
     controller: 'meinProfilCtrl'
   })
 
-  .state('projekte', {
-    url: '/sidemenu_projects',
-    templateUrl: 'templates/projekte.html',
-    controller: 'projekteCtrl'
+  .state('projekt', {
+    url: '/sidemenu_projects/:projectId',
+    templateUrl: 'templates/projekt.html',
+    controller: 'projektCtrl'
   })
 
   .state('gelSchteAufgaben', {
@@ -92,8 +92,5 @@ angular.module('app.routes', [])
     controller: 'einstellungenCtrl'
   })
 
-$urlRouterProvider.otherwise('/login')
-
-  
-
+	$urlRouterProvider.otherwise('/login')
 });

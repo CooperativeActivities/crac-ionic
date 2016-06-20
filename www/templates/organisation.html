@@ -14,30 +14,51 @@
 		</div>
 
 		<div class="button-bar island">
-			<a class="button button-stable button-outline">Projekte</a>
-			<a class="button button-stable button-outline">abgeschl. Projekte</a>
+			<a class="button button-stable button-outline"
+				ng-click="displayOpenProjects()"
+				ng-class="{'active' : showOpenProjects}">Projekte</a>
+			<a class="button button-stable button-outline"
+				ng-click="displayCompletedProjects()"
+				ng-class="{'active' : showCompletedProjects}">abgeschl. Projekte</a>
 		</div>
 
-		<div class="list list-inset">
-			 <a ng-repeat="project in projects"
-				 href="#/projekt/{{project.id}}"
+		<div class="list list-inset" ng-show="showOpenProjects">
+			 <a ng-repeat="openProject in openProjects"
+				 href="#/sidemenu_projects/{{openProject.id}}"
 				 class="item">
 
 				 <div class="row">
 				 	<div class="col col-25" style="
-						background: url('{{project.imagePath}}');
+						background: url('{{openProject.imagePath}}');
 						background-size: cover;
 						height: 100px;">
 				 	</div>
 
 					<div class="col padding-left">
-						<h2>{{ project.name }}</h2>
-						<h4>{{ project.description }}</h4>
+						<h2>{{ openProject.name }}</h2>
+						<h4 class="islandHalf">{{ openProject.completedTasks}}/{{openProject.maxTasks}} Aufgaben erledigt</h4>
 					</div>
 				 </div>
+			 </a>
+		</div>
 
+		<div class="list list-inset" ng-show="showCompletedProjects">
+			 <a ng-repeat="completedProject in completedProjects"
+				 href="#/sidemenu_projects/{{completedProject.id}}"
+				 class="item">
 
+				 <div class="row">
+					<div class="col col-25" style="
+						background: url('{{completedProject.imagePath}}');
+						background-size: cover;
+						height: 100px;">
+					</div>
 
+					<div class="col padding-left">
+						<h2>{{ completedProject.name }}</h2>
+						<h4 class="islandHalf">{{ completedProject.completedTasks}}/{{completedProject.maxTasks}} Aufgaben erledigt</h4>
+					</div>
+				 </div>
 			 </a>
 		</div>
 
