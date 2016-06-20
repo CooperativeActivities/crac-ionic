@@ -2,7 +2,7 @@
     <ion-content padding="true" class="has-header">
 		<div class="list card">
 
-			<div class="item item-avatar">
+			<div class="item item-avatar" ng-click="modal.show()">
 				<img src="img/user.jpg">
 				<h2>{{user.firstName}} {{user.lastName}}</h2>
 				<p>Username: {{user.name}}</p>
@@ -10,7 +10,18 @@
 
 			<div class="item item-body">
 				<div class="item item-divider">
-					Daten
+					Rolle
+				</div>
+
+				<div class="list">
+					<a class="item item-icon-left" href="#">
+						<i class="icon ion-person-stalker"></i>
+						{{user.role}}
+					</a>
+				</div>
+
+				<div class="item item-divider">
+					Kontaktdaten
 				</div>
 
 				<div class="list">
@@ -23,10 +34,6 @@
 						<i class="icon ion-ios-telephone"></i>
 						{{user.phone}}
 						<i class="icon ion-edit smaller"></i>
-					</a>
-					<a class="item item-icon-left" href="#">
-						<i class="icon ion-person-stalker"></i>
-						{{user.role}}
 					</a>
 				</div>
 
@@ -63,16 +70,34 @@
 					Datenschutz
 				</div>
 
-				<div class="list" href="#">
-					<a class="item">
+				<div class="list" >
+					<a class="item" ui-sref="login">
 						<button class="button button-full button-assertive">
 							Account löschen
+						</button>
+					</a>
+					<a class="item" ui-sref="login">
+						<button class="button button-full button-energized">
+							Gespeicherte Daten anzeigen
 						</button>
 					</a>
 				</div>
 
 		</div>
     </ion-content>
+
+	<script id="profileimage-modal.html" type="text/ng-template">
+		<ion-modal-view>
+			<ion-header-bar ng-click="modal.hide()">
+				<h1 class="title">Bild Ändern</h1><i class="icon ion-close-circled">
+			</ion-header-bar>
+			<ion-content>
+				<img src="img/user.jpg">
+			</ion-content>
+		</ion-modal-view>
+	</script>
+
+
 </ion-view>
 
 

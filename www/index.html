@@ -24,8 +24,7 @@
         padding-top:0px !important;
       }
     </style>
-
-    <script src="js/app.js"></script>
+      <script src="js/app.js"></script>
     <script src="lib/angular-modules/angular-messages.min.js"></script>
     <script src="lib/angular-modules/angular-cookies.min.js"></script>
 
@@ -42,7 +41,7 @@
     -->
 
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
+  <body ng-app="app" ng-controller="logoutCtrl" animation="slide-left-right-ios7">
   <div>
     <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
         <ion-side-menu-content>
@@ -67,12 +66,27 @@
                     </ion-item>
                     <ion-item ui-sref="tabsController.neuigkeiten" menu-close="" data-componentid="list-item10"><i class="icon ion-home"></i> Neuigkeiten</ion-item>
                     <ion-item ui-sref="meinProfil" menu-close="" data-componentid="list-item5"><i class="icon ion-person"></i> Mein Profil</ion-item>
-                    <ion-item ui-sref="organisation" menu-close="" data-componentid="list-item6"><i class="icon ion-ios-list-outline"></i> Projekte</ion-item>
+                    <ion-item ui-sref="organisation" menu-close="" data-componentid="list-item6"><i class="icon ion-ios-list"></i> Projekte</ion-item>
                     <ion-item ui-sref="gelSchteAufgaben" menu-close="" data-componentid="list-item7"><i class="icon ion-trash-a"></i> gelöschte Aufgaben</ion-item>
                     <ion-item ui-sref="einstellungen" menu-close="" data-componentid="list-item8"><i class="icon ion-gear-a"></i> Einstellungen</ion-item>
-                    <ion-item ui-sref="login" menu-close="" data-componentid="list-item9"><i class="icon ion-close-circled"></i> Abmelden</ion-item>
+                    <ion-item ng-click="modal.show()" menu-close="" data-componentid="list-item9"><i class="icon ion-close-circled"></i> Abmelden</ion-item>
                 </ion-list>
             </ion-content>
+
+            <script id="logout-modal.html" type="text/ng-template">
+                <ion-modal-view>
+                    <ion-content>
+                        <ion-item style="text-align: center;">Wirklich ausloggen?</ion-item>
+                        <button ng-click="modal.hide()" ui-sref="login" class="button button-full button-assertive">
+                            Ja - ausloggen
+                        </button>
+                        <button ng-click="modal.hide()" class="button button-full button-balanced">
+                            Nein - eingeloggt bleiben
+                        </button>
+                    </ion-content>
+                </ion-modal-view>
+            </script>
+
         </ion-side-menu>
     </ion-side-menus>
 </div>

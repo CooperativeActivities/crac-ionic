@@ -57,5 +57,9 @@ cracApp.run(function($ionicPlatform) {
 		 // Older Angular Version
        //$httpProvider.responseInterceptors.push("HttpErrorInterceptorService");
        $httpProvider.interceptors.push("HttpErrorInterceptorService");
+
+		 // changed by elmar, needed to prevent CORS errors!
+		 //$httpProvider.defaults.withCredentials = true;
+
    }
 ]);
