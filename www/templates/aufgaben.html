@@ -17,11 +17,11 @@
                     </div>
                 </dic>
 
-                <div class="row">
+                <!--<div class="row">
                     <div class="col">
                         <h3>{{ item.description | limitTo:150 }}</h3>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="row">
                     <div class="col">
@@ -41,7 +41,7 @@
                         <span class="ion-minus-round icon" data-pack="default"></span>
                         <span class="menuText">Absagen</span>
                     </a>
-                    <a class="button button-stable ">
+                    <a class="button button-stable" href="#/task/detail/{{item.projectId}}/{{item.id}}">
                         <span class="ion-more icon" data-pack="default"></span>
                         <span class="menuText more">Mehr</span>
                     </a>
