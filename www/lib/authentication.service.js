@@ -21,12 +21,15 @@
 
 			  var authdata = Base64.encode(username + ':' + password);
 
-            $http.get(baseURL+'user/login', {
-					'Authorization': 'Basic ' + authdata,
-                	'Accept': 'application/json; charset=utf-8',
-                	'Content-Type': 'application/json; charset=utf-8'
-				})
-                .success(function (response, status, headers) {
+			  var req = {
+				   method: 'GET',
+				   url: baseURL + 'user/login',
+				   headers: {
+				     'Authorization': 'Basic ' + authdata
+				   }
+				};
+
+            $http(req).success(function (response, status, headers) {
 
 						 console.log("Success");
 						 console.log(response);
