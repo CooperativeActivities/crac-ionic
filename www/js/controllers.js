@@ -449,7 +449,7 @@ angular.module('app.controllers', [])
 	};
 })
 
-.controller('gelSchteAufgabenCtrl', function($scope) {
+.controller('umgebungCtrl', function($scope) {
 
 })
 

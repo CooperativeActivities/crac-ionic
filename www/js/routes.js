@@ -98,10 +98,10 @@ angular.module('app.routes', [])
     controller: 'projektCtrl'
   })
 
-  .state('gelSchteAufgaben', {
-    url: '/sidemenu_deletedTasks',
-    templateUrl: 'templates/gelSchteAufgaben.html',
-    controller: 'gelSchteAufgabenCtrl'
+  .state('umgebung', {
+    url: '/sidemenu_umgebung',
+    templateUrl: 'templates/umgebung.html',
+    controller: 'umgebungCtrl'
   })
 
   .state('einstellungen', {
