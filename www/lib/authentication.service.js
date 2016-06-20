@@ -21,6 +21,14 @@
 
 			  var authdata = Base64.encode(username + ':' + password);
 
+			  // Hm, works.. reproduces a respone (unauthorized) :(
+			  var req = {
+					method: 'GET',
+					url: baseURL + 'user/login'
+			   };
+
+				// When I add a custom header the server tells me to fuck off
+				/*
 			  var req = {
 				   method: 'GET',
 				   url: baseURL + 'user/login',
@@ -28,8 +36,9 @@
 				     'Authorization': 'Basic ' + authdata
 				   }
 				};
+				*/
 
-            $http(req).success(function (response, status, headers) {
+				$http(req).success(function (response, status, headers) {
 
 						 console.log("Success");
 						 console.log(response);
