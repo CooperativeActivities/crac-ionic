@@ -17,7 +17,7 @@
 						 	 'has-errors' : authorizationForm.username.$invalid && authorizationForm.username.$dirty,
 							 'no-errors' : authorizationForm.username.$valid && !authorizationForm.username.$untouched && !hasWrongCredentials}">
 	                <span class="input-label">Benutzer</span>
-	                <input type="text" name="username" ng-model="authorization.username" required placeholder="frontend / frontendKey">
+	                <input type="text" name="username" ng-model="authorization.username" required placeholder="darf nicht hier stehen">
 	              </label>
 
 	              <div class="error-container" ng-show="authorizationForm.username.$invalid && authorizationForm.username.$dirty" ng-messages="authorizationForm.username.$error">
