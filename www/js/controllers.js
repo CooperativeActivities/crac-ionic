@@ -155,7 +155,8 @@ angular.module('app.controllers', [])
 				console.log($error);
 			}
 		);
-		*/
+
+
 
 			AuthenticationService.Login(username, password, function (response) {
              if (response.success) {
@@ -182,9 +183,9 @@ angular.module('app.controllers', [])
              }
          });
 
-/*
+*/
 		// Check if demo-user (frontend@test.at; frontendKey)
-		if(email === "frontend@test.at" &&
+		if(username === "frontend" &&
 			password === "frontendKey")
 		{
 
@@ -202,7 +203,6 @@ angular.module('app.controllers', [])
 		else {
 			$scope.hasWrongCredentials = true;
 		}
-		*/
 	}
 })
 
@@ -210,7 +210,7 @@ angular.module('app.controllers', [])
 	$scope.checkRegister = function() {
 
 		console.log("checkRegister Form");
-		
+
 		// Switch to desired location
 		$location.path("/tabs/footer_news");
 	}
