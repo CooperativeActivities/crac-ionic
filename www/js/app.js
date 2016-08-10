@@ -11,8 +11,7 @@ var cracApp = angular.module('app', [
 	'ngCookies',
 	'app.controllers',
 	'app.routes',
-	'app.services',
-	'app.directives'
+	'app.services'
 ]);
 
 cracApp.run(function($ionicPlatform) {
@@ -31,7 +30,7 @@ cracApp.run(function($ionicPlatform) {
 })
 
 // Interceptor Service
-.factory("HttpErrorInterceptorService", ["$q", "$rootScope", "$location","FlashService",
+/*.factory("HttpErrorInterceptorService", ["$q", "$rootScope", "$location","FlashService",
    function($q, $rootScope, $location,FlashService) {
        var success = function(response) {
                // pass through
@@ -49,18 +48,47 @@ cracApp.run(function($ionicPlatform) {
            return httpPromise.then(success, error);
        };
    }
-])
+])*/
+
+    .service('authInterceptor', function($q, FlashService) {
+        var service = this;
+
+        service.responseError = function(response) {
+            if (response.status == 401){
+                console.log("Fehler");
+                FlashService.Error("Benutzername oder Passwort falsch!");
+               // $location.path("/login");
+            }
+            return $q.reject(response);
+        };
+    })
+    .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.interceptors.push('authInterceptor');
+    }])
+
 
 .config(["$httpProvider",
    function($httpProvider) {
 
 		 // Older Angular Version
        //$httpProvider.responseInterceptors.push("HttpErrorInterceptorService");
-       $httpProvider.interceptors.push("HttpErrorInterceptorService");
+      // $httpProvider.interceptors.push("HttpErrorInterceptorService");
 
 		 // changed by elmar, needed to prevent CORS errors!
 		 //$httpProvider.defaults.withCredentials = true;
+        //$httpProvider.defaults.useXDomain = true;
+       //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+       //$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+       $httpProvider.defaults.useXDomain = true;
+       //$httpProvider.defaults.withCredentials = true;
+       /*delete $httpProvider.defaults.headers.common['X-Requested-With'];
+       $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+       $httpProvider.defaults.headers.common = {};
+       $httpProvider.defaults.headers.post = {};
+       $httpProvider.defaults.headers.put = {};
+       $httpProvider.defaults.headers.patch = {};
+       $httpProvider.defaults.headers.get = {};*/
    }
 ]);
 

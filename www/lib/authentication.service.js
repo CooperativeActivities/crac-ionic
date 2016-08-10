@@ -3,7 +3,7 @@
 
     cracApp.factory('AuthenticationService', AuthenticationService);
 
-    var baseURL = "https://core.crac.at/crac-core/";
+    var baseURL = "https://core.crac.at/crac-core";
 
     AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout'];
     function AuthenticationService($http, $cookieStore, $rootScope, $timeout) {
@@ -18,8 +18,27 @@
         return service;
 
         function Login(username, password, callback) {
+            var authdata = Base64.encode(username + ':' + password);
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
-			  var authdata = Base64.encode(username + ':' + password);
+            $http.get(baseURL+'/user/check')
+                .success(function (response,status, headers) {
+                    if(response.user != null){
+                        console.log("Login successful");
+
+                        // SetCredentials(username,headers('Authorization'));
+
+                        // $http.defaults.headers.common['Authorization'] = headers('Authorization');
+                        $cookieStore.put('globals', $rootScope.globals);
+
+                        response = { success: true };
+                    } else {
+                        response = { success: false, message: 'Username or password is incorrect' };
+                    }
+                    callback(response);
+                });
+
+			 /* var authdata = Base64.encode(username + ':' + password);
 
 			  // Hm, works.. reproduces a respone (unauthorized) :(
 			  var req = {
@@ -58,7 +77,7 @@
                     callback(response);
                 }).error(function (e) {
 						 console.log("error!" + e);
-            });
+            });*/
         }
 
         function SetCredentials(username, password, isAdmin) {

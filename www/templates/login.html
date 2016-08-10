@@ -13,6 +13,7 @@
 						   </div>
 					</div>
 
+				<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
 					 <label class="item item-input" ng-class="{
 						 	 'has-errors' : authorizationForm.username.$invalid && authorizationForm.username.$dirty,
 							 'no-errors' : authorizationForm.username.$valid && !authorizationForm.username.$untouched && !hasWrongCredentials}">
