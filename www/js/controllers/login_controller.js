@@ -9,7 +9,8 @@ cracApp.controller('loginCtrl', function($scope, $http, $location, UserDataServi
     $scope.checkLogin = function login(username,password){
         console.log("in login");
         $scope.dataLoading = true;
-        AuthenticationService.Login(username, password, function (response) {
+        $location.path("/tabs/footer_news");
+        /*AuthenticationService.Login(username, password, function (response) {
             if (response.success) {
                 //AuthenticationService.SetCredentials($scope.username, $scope.password);
                 $scope.loggedIn = true;
@@ -22,7 +23,7 @@ cracApp.controller('loginCtrl', function($scope, $http, $location, UserDataServi
                 $scope.loggedIn = false;
                 $scope.hasWrongCredentials = true;
             }
-        });
+        });'*/
     };
 
     //$scope.checkLogin = function(username, password) {
