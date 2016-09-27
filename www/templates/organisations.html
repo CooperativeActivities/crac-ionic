@@ -1,0 +1,65 @@
+<ion-view title="Meine Organisationen" id="page9">
+    <ion-content padding="true" class="has-header">
+		<div class="list card">
+
+				<table>
+					<thead class="item item-divider"><tr>
+						<td>Organisation</td><td>Notifaction</td><td>Verlassen</td>
+					</tr></thead>
+					<tbody>
+					<tr class="item item-toggle" ng-repeat="org in organsations | orderBy: 'name'">
+						<td>{{org.name}}</td>
+						<td><ion-toggle ng-checked="{{org.notify}}" ng-model="org.notify" ng-change="changeNotification(org.id,org.notify)" toggle-class="toggle-calm"> &nbsp;</ion-toggle>
+
+
+						</td>
+						<td><button class="ion-ios-close button button-negative" ng-click="addOrganisation()">
+							Austreten
+						</button></td>
+					</tr>
+					</tbody>
+				</table>
+
+
+				<!--
+				<img class="full-image" src="delorean.jpg">
+
+				<p>
+					This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+					the content is ssfrom a card-body consisting of an image and paragraph text. The footer
+					consists of tabs, icons aligned left, within the card-footer.
+				</p>
+				-->
+				<div class="item item-divider">
+					Organisationen
+				</div>
+
+				<li class="item item-toggle" ng-repeat="org in organsations | orderBy: 'name'">
+					{{org.name}}
+					<!--<label class="toggle toggle-balanced">
+						<input type="checkbox" ng-checked="{{org.notify}}" ng-model="org.notify" ng-change="changeNotification(org.id,org.notify)">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>-->
+					<ion-toggle ng-checked="{{org.notify}}" ng-model="org.notify" ng-change="changeNotification(org.id,org.notify)" toggle-class="toggle-calm">Notification</ion-toggle>
+				</li>
+
+				<!--<li class="item item-toggle">
+					Waldorfschule
+					<label class="toggle toggle-balanced">
+						<input type="checkbox" ng-change="changeNotification('1',$event)">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</li> -->
+		</div>
+		<button class="button button-positive button-small" ng-click="addOrganisation()">
+			Weitere Organisation hinzufügen
+		</button>
+    </ion-content>
+
+</ion-view>
+
+

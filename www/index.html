@@ -31,10 +31,16 @@
 	 <script src="lib/authentication.service.js"></script>
 	 <script src="lib/flash.service.js"></script>
 
+
+      <script src="js/services/services.js"></script>
+      <script src="js/services/organisationService.js"></script>
+
     <script src="js/controllers/controllers.js"></script>
       <script src="js/controllers/login_controller.js"></script>
+      <script src="js/controllers/organisationsCtrl.js"></script>
     <script src="js/routes.js"></script>
-    <script src="js/services/services.js"></script>
+
+
 
 
     <!-- Only required for Tab projects w/ pages in multiple tabs
@@ -65,9 +71,10 @@
                         <h2>Organisation</h2>
                         <p>Rotes Kreuz</p>
                     </ion-item>
-                    <ion-item ui-sref="tabsController.neuigkeiten" menu-close="" data-componentid="list-item10"><i class="icon ion-home"></i> Neuigkeiten</ion-item>
+                    <ion-item ui-sref="tabsController.neuigkeiten" menu-close="" data-componentid="list-item10"><i class="icon ion-chatbubble"></i> Neuigkeiten</ion-item>
+                    <ion-item ui-sref="projects" menu-close="" data-componentid="list-item6"><i class="icon ion-clipboard"></i> Projekte</ion-item>
+                    <ion-item ui-sref="organisation" menu-close="" data-componentid="list-item11"><i class="icon ion-ios-people"></i> Organisationen</ion-item>
                     <ion-item ui-sref="meinProfil" menu-close="" data-componentid="list-item5"><i class="icon ion-person"></i> Mein Profil</ion-item>
-                    <ion-item ui-sref="organisation" menu-close="" data-componentid="list-item6"><i class="icon ion-ios-list"></i> Projekte</ion-item>
                     <ion-item ui-sref="umgebung" menu-close="" data-componentid="list-item7"><i class="icon ion-ios-location"></i> Umgebung</ion-item>
                     <ion-item ui-sref="einstellungen" menu-close="" data-componentid="list-item8"><i class="icon ion-gear-a"></i> Einstellungen</ion-item>
                     <ion-item ng-click="modal.show()" menu-close="" data-componentid="list-item9"><i class="icon ion-close-circled"></i> Abmelden</ion-item>

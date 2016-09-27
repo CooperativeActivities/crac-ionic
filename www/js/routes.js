@@ -80,11 +80,17 @@ angular.module('app.routes', [])
       controller: 'aufgabeDetailCtrl'
   })
 
-  .state('organisation', {
-    url: '/sidemenu_organisation',
-    templateUrl: 'templates/organisation.html',
-    controller: 'organisationCtrl'
+  .state('projects', {
+    url: '/sidemenu_projects',
+    templateUrl: 'templates/projects.html',
+    controller: 'projectsCtrl'
   })
+
+    .state('organisation', {
+      url: '/sidemenu_organisation',
+      templateUrl: 'templates/organisations.html',
+      controller: 'organisationsCtrl'
+    })
 
   .state('meinProfil', {
     url: '/sidemenu_userprofile',
