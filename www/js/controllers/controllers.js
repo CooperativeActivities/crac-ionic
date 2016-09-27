@@ -150,7 +150,7 @@ angular.module('app.controllers', [])
 	}
 })
 
-.controller('organisationCtrl', function($scope, $http) {
+.controller('projectsCtrl', function($scope, $http) {
 
 	// REST-Call: /projects
 	// Display ALL projects. In this domain we haven't modelled organizations, so every
