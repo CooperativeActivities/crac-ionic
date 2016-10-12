@@ -68,3 +68,6 @@ npm install android
 
 http://ionicframework.com/docs/cli/ -- CLI Beschreibung.
 http://ionicframework.com/docs/components/ -- Components
+
+Test2
+kljh
