@@ -87,9 +87,9 @@
                     </ion-item>
                     <!--<ion-item ui-sref="tabsController.neuigkeiten" menu-close="" data-componentid="list-item10"><i class="icon ion-chatbubble"></i> Neuigkeiten</ion-item>
                     <ion-item ui-sref="projects" menu-close="" data-componentid="list-item6"><i class="icon ion-clipboard"></i> Projekte</ion-item>
-                    <ion-item ui-sref="organisation" menu-close="" data-componentid="list-item11"><i class="icon ion-ios-people"></i> Organisationen</ion-item>
+                    <ion-item ui-sref="organisation" menu-close="" data-componentid="list-item11"><i class="icon ion-ios-people"></i> Organisationen</ion-item> -->
                     <ion-item ui-sref="meinProfil" menu-close="" data-componentid="list-item5"><i class="icon ion-person"></i> Mein Profil</ion-item>
-                    <ion-item ui-sref="umgebung" menu-close="" data-componentid="list-item7"><i class="icon ion-ios-location"></i> Umgebung</ion-item>
+                    <!--<ion-item ui-sref="umgebung" menu-close="" data-componentid="list-item7"><i class="icon ion-ios-location"></i> Umgebung</ion-item>
                     <ion-item ui-sref="einstellungen" menu-close="" data-componentid="list-item8"><i class="icon ion-gear-a"></i> Einstellungen</ion-item> -->
                     <ion-item ng-click="modal.show()" menu-close="" data-componentid="list-item9"><i class="icon ion-close-circled"></i> Abmelden</ion-item>
                 </ion-list>
@@ -99,7 +99,7 @@
                 <ion-modal-view>
                     <ion-content>
                         <ion-item style="text-align: center;">Wirklich ausloggen?</ion-item>
-                        <button ng-click="modal.hide()" ui-sref="login" class="button button-full button-assertive">
+                        <button ng-click="logout()" ui-sref="login" class="button button-full button-assertive">
                             Ja - ausloggen
                         </button>
                         <button ng-click="modal.hide()" class="button button-full button-balanced">

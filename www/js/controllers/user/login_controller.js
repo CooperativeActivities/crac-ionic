@@ -11,10 +11,10 @@ cracApp.controller('loginCtrl', function($scope, $http, $location, UserDataServi
         $scope.dataLoading = true;
         AuthenticationService.Login(username, password, function (response) {
             if (response.success) {
-                AuthenticationService.SetCredentials($scope.username, $scope.password);
+                AuthenticationService.SetCredentials(username, password);
                 $scope.loggedIn = true;
                 $scope.hasWrongCredentials = false;
-                $location.path("/tabs/footer_news");
+                $location.path("/tabs/footer_notifications");
             } else {
                 FlashService.Error(response.message);
                 $scope.dataLoading = false;

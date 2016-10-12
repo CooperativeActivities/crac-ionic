@@ -1,7 +1,7 @@
 /**
  * Created by p23460 on 12.10.2016.
  */
-cracApp.controller('logoutCtrl', function($scope, $ionicModal) {
+cracApp.controller('logoutCtrl', function($scope, $ionicModal,AuthenticationService) {
 
     // Logout Modal
     $ionicModal.fromTemplateUrl('logout-modal.html', {
@@ -17,6 +17,8 @@ cracApp.controller('logoutCtrl', function($scope, $ionicModal) {
 
     $scope.logout = function(){
         console.log("logout");
+        AuthenticationService.Logout();
+        $scope.modal.hide();
         $location.path("/login");
     }
 

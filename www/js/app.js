@@ -14,7 +14,7 @@ var cracApp = angular.module('app', [
 	'app.services'
 ]);
 
-cracApp.run(function($ionicPlatform) {
+cracApp.run(function($ionicPlatform,$rootScope, $location, $cookieStore, $http) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -27,7 +27,25 @@ cracApp.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+    // keep user logged in after page refresh
+    $rootScope.globals = $cookieStore.get('globals') || {};
+    if ($rootScope.globals.currentUser) {
+        $http.defaults.headers.common['Authorization'] = $rootScope.globals.currentUser.authdata; // jshint ignore:line
+    }
+
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        // redirect to login page if not logged in and trying to access a restricted page
+        //var restrictedPage = $.inArray($location.path(), ['/admin']) === -1;
+        var restrictedPage = $location.path().indexOf("/login")==-1
+        console.log(restrictedPage)
+        var loggedIn = $rootScope.globals.currentUser;
+        if (restrictedPage && !loggedIn) {
+            $location.path('/login');
+        }
+    });
 })
+
+
 
 // Interceptor Service
 /*.factory("HttpErrorInterceptorService", ["$q", "$rootScope", "$location","FlashService",

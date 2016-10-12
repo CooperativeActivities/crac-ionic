@@ -83,15 +83,13 @@
             });*/
         }
 
-        function SetCredentials(username, password, isAdmin) {
+        function SetCredentials(username, password) {
             var authdata = Base64.encode(username + ':' + password);
 
-            console.log("in setCredentials: isadmin == "+isAdmin);
             $rootScope.globals = {
                 currentUser: {
                     username: username,
                     authdata: authdata,
-                    isAdmin: isAdmin
                 }
             };
 
@@ -100,7 +98,7 @@
         }
 
         function Logout(){
-            $http.delete(baseUrl+'/api/login.json');
+            //$http.delete(baseUrl+'/api/login.json');
             ClearCredentials();
         }
 
