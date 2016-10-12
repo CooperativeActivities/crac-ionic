@@ -36,6 +36,9 @@
                         response = { success: false, message: 'Username or password is incorrect' };
                     }
                     callback(response);
+                })
+                .error(function(response,status, headers){
+                    response = { success: false, message: 'Username or password is incorrect' };
                 });
 
 			 /* var authdata = Base64.encode(username + ':' + password);

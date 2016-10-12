@@ -57,7 +57,7 @@ cracApp.run(function($ionicPlatform) {
             if (response.status == 401){
                 console.log("Fehler");
                 FlashService.Error("Benutzername oder Passwort falsch!");
-               // $location.path("/login");
+                $location.path("/login");
             }
             return $q.reject(response);
         };

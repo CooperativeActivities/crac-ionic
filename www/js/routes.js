@@ -8,6 +8,15 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+    //shows the login screen
+    .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'loginCtrl'
+      })
+
+
+
   .state('tabsController.neuigkeiten', {
     url: '/footer_news',
     views: {
@@ -50,11 +59,7 @@ angular.module('app.routes', [])
     abstract:true
   })
 
-  .state('login', {
-    url: '/login',
-    templateUrl: 'templates/login.html',
-    controller: 'loginCtrl'
-  })
+
 
   .state('registrierung', {
     url: '/register',

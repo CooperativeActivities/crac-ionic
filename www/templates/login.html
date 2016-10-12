@@ -6,14 +6,20 @@
         <form class="list" name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)">
             <ion-list>
 
-					<div class="error-container main-error-container" ng-show="hasWrongCredentials">
+					<div  class="error-container main-error-container" ng-show="hasWrongCredentials">
 						 <div class="error">
 						 	 <i class="ion-information-circled"></i>
 						 	 Falsche Login Daten!
 						   </div>
 					</div>
 
-				<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+
+				<div  ng-if="flash" class="alert alert-danger" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Error:</span>
+					{{flash.message}}
+				</div>
+
 					 <label class="item item-input" ng-class="{
 						 	 'has-errors' : authorizationForm.username.$invalid && authorizationForm.username.$dirty,
 							 'no-errors' : authorizationForm.username.$valid && !authorizationForm.username.$untouched && !hasWrongCredentials}">
@@ -40,8 +46,8 @@
 
             <div class="spacer" style="height: 40px;"></div>
             <input type="submit" id="login-button1" class="button button-stable button-block" ng-click="checkLogin(authorization.username, authorization.password)" value="Einloggen" ng-disabled="authorizationForm.$invalid" />
-            <a ui-sref="registrierung" id="login-button2" class="button button-positive  button-block button-clear">Neuen Account anlegen</a>
-            <a ui-sref="entdeckungsreise" id="login-button6" class="button button-positive  button-block button-clear">Entdeckungsreise</a>
+            <!--<a ui-sref="registrierung" id="login-button2" class="button button-positive  button-block button-clear">Neuen Account anlegen</a>
+            <a ui-sref="entdeckungsreise" id="login-button6" class="button button-positive  button-block button-clear">Entdeckungsreise</a> -->
         </form>
     </ion-content>
 </ion-view>
