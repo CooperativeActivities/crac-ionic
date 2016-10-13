@@ -1,6 +1,6 @@
 angular.module('app.services', [])
 
-.factory('UserDataService', ["$http", function($http){
+.factory('UserDataService', ["$http","$rootScope", function($http,$rootScope){
 
 	var srv = {};
 
@@ -19,7 +19,15 @@ angular.module('app.services', [])
 
 	// Get specified user by id (integer)
 	srv.getUserById = function(id){
-		return $http.get(srv._baseURL + "user/" + id);
+		console.log($rootScope.globals)
+		var req = {
+			method: 'GET',
+			url: srv._baseURL + 'user/' + id,
+			headers: {
+				'Authorization': "Basic " + $rootScope.globals.currentUser.authdata
+			}
+		}
+		return $http(req);
 	}
 
 	/**
