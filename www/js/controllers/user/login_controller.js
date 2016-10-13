@@ -11,7 +11,7 @@ cracApp.controller('loginCtrl', function($scope, $http, $location, UserDataServi
         $scope.dataLoading = true;
         AuthenticationService.Login(username, password, function (response) {
             if (response.success) {
-                AuthenticationService.SetCredentials(username, password);
+                AuthenticationService.SetCredentials(username, password,response.id);
                 $scope.loggedIn = true;
                 $scope.hasWrongCredentials = false;
                 $location.path("/tabs/footer_notifications");

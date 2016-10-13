@@ -31,7 +31,7 @@
                         // $http.defaults.headers.common['Authorization'] = headers('Authorization');
                         $cookieStore.put('globals', $rootScope.globals);
 
-                        response = { success: true };
+                        response = { success: true, id:response.user };
                     } else {
                         response = { success: false, message: 'Username or password is incorrect' };
                     }
@@ -83,12 +83,13 @@
             });*/
         }
 
-        function SetCredentials(username, password) {
+        function SetCredentials(username, password,id) {
             var authdata = Base64.encode(username + ':' + password);
 
             $rootScope.globals = {
                 currentUser: {
                     username: username,
+                    id: id,
                     authdata: authdata,
                 }
             };
