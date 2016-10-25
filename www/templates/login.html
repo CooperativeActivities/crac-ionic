@@ -6,46 +6,54 @@
         <form class="list" name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)">
             <ion-list>
 
-					<div  class="error-container main-error-container" ng-show="hasWrongCredentials">
-						 <div class="error">
-						 	 <i class="ion-information-circled"></i>
-						 	 Falsche Login Daten!
-						   </div>
-					</div>
+                <div class="error-container main-error-container" ng-show="hasWrongCredentials">
+                    <div class="error">
+                        <i class="ion-information-circled"></i>
+                        Falsche Login Daten!
+                    </div>
+                </div>
 
 
-				<div  ng-if="flash" class="alert alert-danger" role="alert">
-					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-					<span class="sr-only">Error:</span>
-					{{flash.message}}
-				</div>
+                <div ng-if="flash" class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    {{flash.message}}
+                </div>
 
-					 <label class="item item-input" ng-class="{
+
+                <label class="item item-input" ng-class="{
 						 	 'has-errors' : authorizationForm.username.$invalid && authorizationForm.username.$dirty,
 							 'no-errors' : authorizationForm.username.$valid && !authorizationForm.username.$untouched && !hasWrongCredentials}">
-	                <span class="input-label">Benutzer</span>
-	                <input type="text" name="username" ng-model="authorization.username" required placeholder="darf nicht hier stehen">
-	              </label>
+                    <span class="input-label">Benutzer</span>
+                    <input type="text" name="username" ng-model="authorization.username" required
+                           placeholder="darf nicht hier stehen">
+                </label>
 
-	              <div class="error-container" ng-show="authorizationForm.username.$invalid && authorizationForm.username.$dirty" ng-messages="authorizationForm.username.$error">
-	                <div ng-messages-include="error-list.html"></div>
-	              </div>
+                <div class="error-container"
+                     ng-show="authorizationForm.username.$invalid && authorizationForm.username.$dirty"
+                     ng-messages="authorizationForm.username.$error">
+                    <div ng-messages-include="error-list.html"></div>
+                </div>
 
-					  <label class="item item-input" ng-class="{
+                <label class="item item-input" ng-class="{
 						   'has-errors' : authorizationForm.password.$invalid && authorizationForm.password.$dirty,
 							'no-errors' : authorizationForm.password.$valid  && authorizationForm.$untouched && !hasWrongCredentials}">
-	                <span class="input-label">Passwort</span>
-	                <input type="password" name="password" ng-model="authorization.password" required>
-	              </label>
+                    <span class="input-label">Passwort</span>
+                    <input type="password" name="password" ng-model="authorization.password" required>
+                </label>
 
-	              <div class="error-container" ng-show="authorizationForm.password.$invalid && authorizationForm.password.$dirty" ng-messages="authorizationForm.password.$error">
-	                  <div ng-messages-include="error-list.html"></div>
-	              </div>
+                <div class="error-container"
+                     ng-show="authorizationForm.password.$invalid && authorizationForm.password.$dirty"
+                     ng-messages="authorizationForm.password.$error">
+                    <div ng-messages-include="error-list.html"></div>
+                </div>
 
             </ion-list>
 
             <div class="spacer" style="height: 40px;"></div>
-            <input type="submit" id="login-button1" class="button button-stable button-block" ng-click="checkLogin(authorization.username, authorization.password)" value="Einloggen" ng-disabled="authorizationForm.$invalid" />
+            <input type="submit" id="login-button1" class="button button-stable button-block"
+                   ng-click="checkLogin(authorization.username, authorization.password)" value="Einloggen"
+                   ng-disabled="authorizationForm.$invalid"/>
             <!--<a ui-sref="registrierung" id="login-button2" class="button button-positive  button-block button-clear">Neuen Account anlegen</a>
             <a ui-sref="entdeckungsreise" id="login-button6" class="button button-positive  button-block button-clear">Entdeckungsreise</a> -->
         </form>
@@ -53,20 +61,20 @@
 </ion-view>
 
 <script id="error-list.html" type="text/ng-template">
-  <div class="error" ng-message="required">
-	 <i class="ion-information-circled"></i>
-	 Pflichtfeld!
-  </div>
-  <div class="error" ng-message="username">
-  <i class="ion-information-circled"></i>
-  Bitte einen gültigen Username eintragen!
-  </div>
-  <div class="error" ng-message="minlength">
-	 <i class="ion-information-circled"></i>
-	 Minimum length of this field is 5 characters!
-  </div>
-  <div class="error" ng-message="maxlength">
-	 <i class="ion-information-circled"></i>
-	 Maximum length of this field is 20 characters!
-  </div>
+    <div class="error" ng-message="required">
+        <i class="ion-information-circled"></i>
+        Pflichtfeld!
+    </div>
+    <div class="error" ng-message="username">
+        <i class="ion-information-circled"></i>
+        Bitte einen gültigen Username eintragen!
+    </div>
+    <div class="error" ng-message="minlength">
+        <i class="ion-information-circled"></i>
+        Minimum length of this field is 5 characters!
+    </div>
+    <div class="error" ng-message="maxlength">
+        <i class="ion-information-circled"></i>
+        Maximum length of this field is 20 characters!
+    </div>
 </script>

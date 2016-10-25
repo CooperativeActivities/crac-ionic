@@ -21,7 +21,7 @@
             var authdata = Base64.encode(username + ':' + password);
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
-            $http.get(baseURL+'/user/check')
+            $http.get(baseURL+'/user/login')
                 .success(function (response,status, headers) {
                     if(response.user != null){
                         console.log("Login successful");
